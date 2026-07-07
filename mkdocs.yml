@@ -1,0 +1,35 @@
+site_name: Trinity
+site_description: Site officiel contenant le fluff et le crunch de mon JdR.
+site_author: MScam dambreville.vincent@gmail.com
+
+theme:
+  name: material
+  palette:
+    # Thème sombre/lumineux automatique
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Passer au mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Passer au mode clair
+  features:
+    - navigation.tabs # Menu horizontal en haut
+    - navigation.sections # Sections claires dans la barre latérale
+
+nav:
+  - Accueil: index.md
+  - 📖 L'Univers (Fluff):
+    - Présentation du monde: fluff/monde.md
+    - Les Factions: fluff/factions.md
+  - 🎲 Les Règles (Crunch):
+    - Création de personnage: crunch/creation_perso.md
+    - Système de jeu: crunch/systeme.md
+  - 📜 Licence: LICENSE.md
