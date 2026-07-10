@@ -6,15 +6,22 @@
   "des": {
     "tailles": ["d6", "d8", "d10"],
     "valeurs": { "d6": 6, "d8": 8, "d10": 10 },
-    "libellesForce": { "d10": "Fort", "d8": "Moyen", "d6": "Faible" }
+    "libellesForce": { "d10": "Fort", "d8": "Moyen", "d6": "Faible" },
+    "rangParTaille": { "d10": "fort", "d8": "moyen", "d6": "faible" }
   },
-  "niveauCompetence": {
-    "_commentaire": "Table de conversion (somme des valeurs de dé Attribut + Vocation) -> niveau. Provisoire : sera remplacée par le système Fort/Moyen/Faible des spécifications (voir docs/journal.md, commit à venir).",
-    "seuils": [
-      { "sommeMin": 20, "niveau": 3, "seuilReussite": "6+" },
-      { "sommeMin": 16, "niveau": 2, "seuilReussite": "7+" },
-      { "sommeMin": 12, "niveau": 1, "seuilReussite": "8+" },
-      { "sommeMin": 0,  "niveau": 0, "seuilReussite": "9+" }
+  "repartitionCompetences": {
+    "_commentaire": "Pour chaque rang (fort/moyen/faible) d'un Attribut ou d'une Vocation, nombre de compétences (parmi les 3 associées) qui reçoivent +1 point. Fort = automatique sur les 3. Moyen = 2 au choix parmi 3. Faible = 1 au choix parmi 3.",
+    "nombreParRang": { "fort": 3, "moyen": 2, "faible": 1 }
+  },
+  "seuilsReussite": {
+    "_commentaire": "Niveau d'une compétence -> seuil de réussite au jet de dés (résolution en jeu, hors périmètre du moteur de fiche). Niveaux 0 à 2 atteignables à la création (1 point Attribut + 1 point Vocation max). Niveaux 3 à 5 réservés à la progression en campagne.",
+    "table": [
+      { "niveau": 0, "seuil": "9+" },
+      { "niveau": 1, "seuil": "8+" },
+      { "niveau": 2, "seuil": "7+" },
+      { "niveau": 3, "seuil": "6+" },
+      { "niveau": 4, "seuil": "5+" },
+      { "niveau": 5, "seuil": "4+" }
     ]
   },
   "questionnaire": {
