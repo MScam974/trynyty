@@ -1,0 +1,31 @@
+{
+  "jeu": {
+    "titre": "Trynyty",
+    "sousTitre": "Rémanence"
+  },
+  "des": {
+    "tailles": ["d6", "d8", "d10"],
+    "valeurs": { "d6": 6, "d8": 8, "d10": 10 },
+    "libellesForce": { "d10": "Fort", "d8": "Moyen", "d6": "Faible" }
+  },
+  "niveauCompetence": {
+    "_commentaire": "Table de conversion (somme des valeurs de dé Attribut + Vocation) -> niveau. Provisoire : sera remplacée par le système Fort/Moyen/Faible des spécifications (voir docs/journal.md, commit à venir).",
+    "seuils": [
+      { "sommeMin": 20, "niveau": 3, "seuilReussite": "6+" },
+      { "sommeMin": 16, "niveau": 2, "seuilReussite": "7+" },
+      { "sommeMin": 12, "niveau": 1, "seuilReussite": "8+" },
+      { "sommeMin": 0,  "niveau": 0, "seuilReussite": "9+" }
+    ]
+  },
+  "questionnaire": {
+    "nombreQuestions": 9,
+    "melangerReponses": true
+  },
+  "creationLibre": {
+    "specialisationsMax": 3
+  },
+  "portrait": {
+    "traitsCaracterMax": 3,
+    "traitsPhysiquesMax": 4
+  }
+}

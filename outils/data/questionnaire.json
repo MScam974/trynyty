@@ -1,0 +1,87 @@
+{
+  "id": "classique",
+  "nom": "Questionnaire classique",
+  "questions": [
+    {
+      "id": "q1",
+      "texte": "Une fumée toxique envahit votre campement.",
+      "reponses": [
+        { "texte": "Vous analysez les courants d'air pour trouver une poche d'air pur.", "affinite": "harmonie", "vocation": "exploration", "attribut": "intellect" },
+        { "texte": "Vous consultez vos cartes topographiques pour évacuer par la zone la plus sûre.", "affinite": "purete", "vocation": "exploration", "attribut": "intellect" },
+        { "texte": "Vous utilisez des capteurs atmosphériques pour calculer la trajectoire du nuage.", "affinite": "suprematie", "vocation": "exploration", "attribut": "intellect" }
+      ]
+    },
+    {
+      "id": "q2",
+      "texte": "Vous trouvez une ancienne radio qui émet un signal étrange.",
+      "reponses": [
+        { "texte": "Vous captez les émotions de détresse dans la voix de l'émetteur.", "affinite": "harmonie", "vocation": "interaction", "attribut": "instinct" },
+        { "texte": "Vous tentez de convaincre le groupe de répondre à l'appel par devoir.", "affinite": "purete", "vocation": "interaction", "attribut": "instinct" },
+        { "texte": "Vous ressentez par intuition qu'il s'agit d'un piège.", "affinite": "suprematie", "vocation": "interaction", "attribut": "instinct" }
+      ]
+    },
+    {
+      "id": "q3",
+      "texte": "Un étranger propose un échange : nourriture contre objet fétiche.",
+      "reponses": [
+        { "texte": "Vous refusez et escaladez une paroi pour chasser vos propres proies.", "affinite": "harmonie", "vocation": "action", "attribut": "habilete" },
+        { "texte": "Vous lui montrez la maîtrise de votre arme pour qu'il renonce à sa demande.", "affinite": "purete", "vocation": "action", "attribut": "habilete" },
+        { "texte": "Vous neutralisez sa main avec précision pour récupérer la ration sans donner l'objet.", "affinite": "suprematie", "vocation": "action", "attribut": "habilete" }
+      ]
+    },
+    {
+      "id": "q4",
+      "texte": "Vous êtes coincé devant une faille infranchissable.",
+      "reponses": [
+        { "texte": "Vous testez la solidité de la roche au toucher pour trouver un passage.", "affinite": "purete", "vocation": "exploration", "attribut": "instinct" },
+        { "texte": "Vous suivez le flair des animaux qui traversent la faille.", "affinite": "harmonie", "vocation": "exploration", "attribut": "instinct" },
+        { "texte": "Vous anticipez le moment où la structure s'effondrera par réflexe.", "affinite": "suprematie", "vocation": "exploration", "attribut": "instinct" }
+      ]
+    },
+    {
+      "id": "q5",
+      "texte": "Quelqu'un doute de votre capacité à diriger.",
+      "reponses": [
+        { "texte": "Vous imposez le respect par la fermeté de votre maintien.", "affinite": "purete", "vocation": "interaction", "attribut": "habilete" },
+        { "texte": "Vous montrez physiquement comment accomplir la tâche, sans un mot.", "affinite": "harmonie", "vocation": "interaction", "attribut": "habilete" },
+        { "texte": "Vous manipulez les outils sous ses yeux pour prouver votre efficacité.", "affinite": "suprematie", "vocation": "interaction", "attribut": "habilete" }
+      ]
+    },
+    {
+      "id": "q6",
+      "texte": "La Peste Écarlate fusionne avec de la technologie.",
+      "reponses": [
+        { "texte": "Vous identifiez le point critique à détruire pour arrêter la contamination.", "affinite": "purete", "vocation": "action", "attribut": "intellect" },
+        { "texte": "Vous cherchez le schéma biologique pour désactiver la corruption.", "affinite": "harmonie", "vocation": "action", "attribut": "intellect" },
+        { "texte": "Vous piratez le signal de la peste pour en reprendre le contrôle.", "affinite": "suprematie", "vocation": "action", "attribut": "intellect" }
+      ]
+    },
+    {
+      "id": "q7",
+      "texte": "Comment vous déplacez-vous dans les zones sauvages ?",
+      "reponses": [
+        { "texte": "En utilisant des outils de franchissement de haute précision.", "affinite": "suprematie", "vocation": "exploration", "attribut": "habilete" },
+        { "texte": "En courant pieds nus pour ne laisser aucune trace.", "affinite": "harmonie", "vocation": "exploration", "attribut": "habilete" },
+        { "texte": "En marchant de façon cadencée pour économiser vos forces.", "affinite": "purete", "vocation": "exploration", "attribut": "habilete" }
+      ]
+    },
+    {
+      "id": "q8",
+      "texte": "Quelle est votre priorité pour améliorer votre équipement ?",
+      "reponses": [
+        { "texte": "Ajouter des modules de communication et de données.", "affinite": "suprematie", "vocation": "interaction", "attribut": "intellect" },
+        { "texte": "Y intégrer des symboles pour inspirer les membres du groupe.", "affinite": "purete", "vocation": "interaction", "attribut": "intellect" },
+        { "texte": "Le rendre capable d'interagir avec les écosystèmes locaux.", "affinite": "harmonie", "vocation": "interaction", "attribut": "intellect" }
+      ]
+    },
+    {
+      "id": "q9",
+      "texte": "Au moment du repos, que faites-vous ?",
+      "reponses": [
+        { "texte": "Vous vérifiez l'intégrité de vos protections contre les intrusions.", "affinite": "suprematie", "vocation": "action", "attribut": "instinct" },
+        { "texte": "Vous restez aux aguets, sentant les mouvements dans la nuit.", "affinite": "harmonie", "vocation": "action", "attribut": "instinct" },
+        { "texte": "Vous aiguisez votre lame par pur réflexe de défense.", "affinite": "purete", "vocation": "action", "attribut": "instinct" }
+      ]
+    }
+  ]
+}

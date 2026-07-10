@@ -1,0 +1,31 @@
+[
+  { "id": "agilite-predatrice",   "nom": "Agilité prédatrice",   "affinite": "harmonie",   "competence": "athletisme" },
+  { "id": "regeneration",         "nom": "Régénération",         "affinite": "harmonie",   "competence": "survie" },
+  { "id": "sens-vibratoires",     "nom": "Sens vibratoires",     "affinite": "harmonie",   "competence": "observation" },
+  { "id": "dominance-alpha",      "nom": "Dominance alpha",      "affinite": "harmonie",   "competence": "presence" },
+  { "id": "lien-empathique",      "nom": "Lien empathique",      "affinite": "harmonie",   "competence": "persuasion" },
+  { "id": "mimetisme",            "nom": "Mimétisme",            "affinite": "harmonie",   "competence": "bluff" },
+  { "id": "mutation-letale",      "nom": "Mutation létale",      "affinite": "harmonie",   "competence": "combat" },
+  { "id": "camouflage-chromatique","nom": "Camouflage chromatique","affinite": "harmonie", "competence": "discretion" },
+  { "id": "bio-synthese",         "nom": "Bio-synthèse",         "affinite": "harmonie",   "competence": "artisanat" },
+
+  { "id": "dignite-du-port",      "nom": "Dignité du port",      "affinite": "purete",     "competence": "athletisme" },
+  { "id": "heritage-des-anciens", "nom": "Héritage des anciens", "affinite": "purete",     "competence": "survie" },
+  { "id": "esprit-analytique",    "nom": "Esprit analytique",    "affinite": "purete",     "competence": "observation" },
+  { "id": "autorite-naturelle",   "nom": "Autorité naturelle",   "affinite": "purete",     "competence": "presence" },
+  { "id": "le-serment",           "nom": "Le Serment",           "affinite": "purete",     "competence": "persuasion" },
+  { "id": "dignite-feinte",       "nom": "Dignité feinte",       "affinite": "purete",     "competence": "bluff" },
+  { "id": "maitrise-martiale",    "nom": "Maîtrise martiale",    "affinite": "purete",     "competence": "combat" },
+  { "id": "anonymat-volontaire",  "nom": "Anonymat volontaire",  "affinite": "purete",     "competence": "discretion" },
+  { "id": "relique",              "nom": "Relique",               "affinite": "purete",     "competence": "artisanat" },
+
+  { "id": "traction-motorisee",   "nom": "Traction motorisée",   "affinite": "suprematie", "competence": "athletisme" },
+  { "id": "capteurs-biometriques","nom": "Capteurs biométriques", "affinite": "suprematie", "competence": "survie" },
+  { "id": "relais-optique",       "nom": "Relais optique",       "affinite": "suprematie", "competence": "observation" },
+  { "id": "intimidation-mecanique","nom": "Intimidation mécanique","affinite": "suprematie","competence": "presence" },
+  { "id": "logique-factuelle",    "nom": "Logique factuelle",    "affinite": "suprematie", "competence": "persuasion" },
+  { "id": "projection-holographique","nom": "Projection holographique","affinite": "suprematie","competence": "bluff" },
+  { "id": "appui-synchronise",    "nom": "Appui synchronisé",    "affinite": "suprematie", "competence": "combat" },
+  { "id": "brouillage-electronique","nom": "Brouillage électronique","affinite": "suprematie","competence": "discretion" },
+  { "id": "interface-systeme",    "nom": "Interface système",    "affinite": "suprematie", "competence": "artisanat" }
+]

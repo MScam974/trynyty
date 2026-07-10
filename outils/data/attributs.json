@@ -1,0 +1,5 @@
+[
+  { "id": "habilete", "nom": "Habileté", "indice": "Corps, précision, mouvement" },
+  { "id": "instinct", "nom": "Instinct", "indice": "Survie, réflexes, lien au vivant" },
+  { "id": "intellect", "nom": "Intellect", "indice": "Analyse, technique, réflexion" }
+]

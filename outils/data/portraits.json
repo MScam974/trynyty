@@ -1,0 +1,70 @@
+{
+  "genres": [
+    { "id": "homme", "nom": "Homme" },
+    { "id": "femme", "nom": "Femme" },
+    { "id": "autre", "nom": "Autre / Non-genré" }
+  ],
+  "traitsCaractere": [
+    { "id": "farouche", "nom": "Farouche", "description": "Méfiant, prêt à mordre au moindre danger", "suggere": ["regard-percant", "cicatrices-fines", "machoire-serree"] },
+    { "id": "loyal", "nom": "Loyal", "description": "Fidèle à son groupe jusqu'au bout", "suggere": ["traits-doux", "tenue-ajustee", "insignes-rang"] },
+    { "id": "calculateur", "nom": "Calculateur", "description": "Pèse chaque décision, froid et méthodique", "suggere": ["regard-percant", "longiligne", "implant-oculaire"] },
+    { "id": "protecteur", "nom": "Protecteur", "description": "Se place toujours devant les autres", "suggere": ["massif", "cicatrices-fines", "manteau-lourd"] },
+    { "id": "solitaire", "nom": "Solitaire", "description": "Préfère l'ombre au groupe", "suggere": ["voute", "crane-rase", "tenue-rapiecee"] },
+    { "id": "charismatique", "nom": "Charismatique", "description": "Attire naturellement l'attention et la confiance", "suggere": ["sourire-en-coin", "cheveux-tresses", "insignes-rang"] },
+    { "id": "impulsif", "nom": "Impulsif", "description": "Agit avant de réfléchir", "suggere": ["nerveux", "cicatrices-fines", "tenue-technique"] },
+    { "id": "stoique", "nom": "Stoïque", "description": "Rien ne semble jamais l'atteindre", "suggere": ["machoire-serree", "peau-tannee", "tenue-ajustee"] },
+    { "id": "curieux", "nom": "Curieux", "description": "Toujours à examiner ce qui l'entoure", "suggere": ["traits-doux", "implant-oculaire", "tatouages-rituels"] },
+    { "id": "mefiant", "nom": "Méfiant", "description": "N'accorde sa confiance qu'à peu de monde", "suggere": ["regard-percant", "crane-rase", "membre-mecanique"] },
+    { "id": "genereux", "nom": "Généreux", "description": "Partage le peu qu'il possède", "suggere": ["traits-doux", "cheveux-tresses", "objet-relique"] },
+    { "id": "cynique", "nom": "Cynique", "description": "Ne croit plus vraiment en grand-chose", "suggere": ["sourire-en-coin", "peau-tannee", "tenue-rapiecee"] },
+    { "id": "discipline", "nom": "Discipliné", "description": "Rituels stricts, tenue irréprochable", "suggere": ["machoire-serree", "tenue-ajustee", "insignes-rang"] },
+    { "id": "reveur", "nom": "Rêveur", "description": "A gardé un fragment d'espoir du Monde d'Avant", "suggere": ["traits-doux", "cheveux-tresses", "objet-relique"] },
+    { "id": "brutal", "nom": "Brutal", "description": "Résout les problèmes par la force", "suggere": ["massif", "cicatrices-fines", "membre-mecanique"] },
+    { "id": "pragmatique", "nom": "Pragmatique", "description": "Ne s'attache qu'à ce qui est utile", "suggere": ["longiligne", "peau-tannee", "tenue-technique"] }
+  ],
+  "traitsPhysiques": {
+    "carrure": [
+      { "id": "athletique", "nom": "Athlétique et nerveux" },
+      { "id": "massif", "nom": "Massif et imposant" },
+      { "id": "frele", "nom": "Frêle et agile" },
+      { "id": "voute", "nom": "Voûté, marqué par l'effort" },
+      { "id": "longiligne", "nom": "Longiligne et gracile" },
+      { "id": "nerveux", "nom": "Sec et nerveux, toujours en mouvement" }
+    ],
+    "visage": [
+      { "id": "regard-percant", "nom": "Regard perçant et froid" },
+      { "id": "cicatrices-fines", "nom": "Visage buriné, cicatrices fines" },
+      { "id": "traits-doux", "nom": "Traits doux, yeux vifs" },
+      { "id": "machoire-serree", "nom": "Mâchoire serrée, expression fermée" },
+      { "id": "sourire-en-coin", "nom": "Sourire en coin, regard malicieux" },
+      { "id": "crane-rase", "nom": "Crâne rasé, traits anguleux" },
+      { "id": "cheveux-tresses", "nom": "Cheveux longs tressés" },
+      { "id": "peau-tannee", "nom": "Peau tannée par le sel et le soleil" }
+    ],
+    "marques": {
+      "harmonie": [
+        { "id": "plaques-chitineuses", "nom": "Plaques chitineuses sur les avant-bras" },
+        { "id": "veines-luminescentes", "nom": "Veines légèrement luminescentes sous la peau" },
+        { "id": "iris-fendus", "nom": "Iris fendus, légères écailles aux tempes" }
+      ],
+      "suprematie": [
+        { "id": "implant-oculaire", "nom": "Implant oculaire cybernétique" },
+        { "id": "port-greffe", "nom": "Port-greffe dorsal pour le drone" },
+        { "id": "membre-mecanique", "nom": "Membre partiellement mécanique" }
+      ],
+      "purete": [
+        { "id": "tatouages-rituels", "nom": "Tatouages rituels de l'Ancien Monde" },
+        { "id": "insignes-rang", "nom": "Insignes cousus témoignant de son rang" },
+        { "id": "objet-relique", "nom": "Objet-relique porté bien en évidence" }
+      ]
+    },
+    "tenue": [
+      { "id": "manteau-lourd", "nom": "Manteau rapiécé et lourd" },
+      { "id": "armure-fortune", "nom": "Armure légère de fortune" },
+      { "id": "tenue-technique", "nom": "Vêtements techniques ajustés" },
+      { "id": "tenue-impermeable", "nom": "Tenue en toile imperméabilisée" },
+      { "id": "tenue-ajustee", "nom": "Tenue sobre et impeccablement ajustée" },
+      { "id": "tenue-rapiecee", "nom": "Vêtements rapiécés, équipement dépareillé" }
+    ]
+  }
+}
