@@ -1,0 +1,32 @@
+/* base.css — provisoire, juste pour la lisibilité pendant le développement.
+   Le vrai découpage par composants (layout.css, questionnaire.css, fiche.css,
+   responsive.css) est prévu dans un commit dédié. */
+
+body {
+    font-family: system-ui, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: #12141a;
+    color: #e8e8e8;
+}
+
+.onglets { display: flex; gap: .5rem; margin-bottom: 1rem; }
+.onglet { padding: .5rem 1rem; background: #23262f; color: #ccc; border: none; cursor: pointer; }
+.onglet.actif { background: #4a5578; color: #fff; }
+.onglet-contenu { display: none; }
+.onglet-contenu.actif { display: block; }
+
+.question-carte { border: 1px solid #333; padding: 1rem; margin-bottom: 1rem; }
+.reponse-option { display: block; padding: .5rem; cursor: pointer; }
+.reponse-option.selectionnee { background: #2e3550; }
+
+.selecteur-de { margin-bottom: .75rem; }
+.selecteur-de-options label { margin-right: 1rem; cursor: pointer; }
+
+.repartition-groupe { border: 1px solid #333; padding: .5rem 1rem; margin-bottom: .5rem; }
+.repartition-rang { font-style: italic; color: #999; margin-left: .5rem; }
+.repartition-compte { float: right; color: #999; }
+.repartition-option { display: inline-block; margin-right: 1rem; }
+
+.erreur-chargement { background: #5a1a1a; color: #fff; padding: 1rem; }

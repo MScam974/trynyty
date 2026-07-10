@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trynyty — Création de personnage</title>
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+    <header>
+        <h1>Trynyty <span class="sous-titre">Rémanence</span></h1>
+    </header>
+
+    <main>
+        <nav id="onglets-methode" class="onglets">
+            <button class="onglet actif" data-onglet="questionnaire">Questionnaire</button>
+            <button class="onglet" data-onglet="creation-libre">Création libre</button>
+        </nav>
+
+        <div id="contenus-methode">
+            <section class="onglet-contenu actif" id="onglet-questionnaire">
+                <div class="entete-section">
+                    <span id="questionnaire-progression">0 / 9</span>
+                    <span id="questionnaire-resultat"></span>
+                </div>
+                <div id="questionnaire-conteneur"></div>
+            </section>
+
+            <section class="onglet-contenu" id="onglet-creation-libre">
+                <h2>Attributs</h2>
+                <div id="selecteur-attributs"></div>
+
+                <h2>Vocations</h2>
+                <div id="selecteur-vocations"></div>
+            </section>
+        </div>
+
+        <section>
+            <h2>Compétences — Attributs</h2>
+            <div id="repartition-attributs"></div>
+
+            <h2>Compétences — Vocations</h2>
+            <div id="repartition-vocations"></div>
+        </section>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
