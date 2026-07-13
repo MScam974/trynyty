@@ -57,15 +57,49 @@ export function genererPrompt(personnage, donnees) {
         ? `Traits de caractère : ${traits.join(', ')}.`
         : "Traits de caractère : (aucun trait marqué pour l'instant).";
 
-    return [
+    const lignes = [
         monde.contexte,
         '',
-        "Décris la psychologie, les intentions et les émotions du personnage suivant (pas son apparence physique) :",
+        "Décris ce personnage de fiction en vue de générer une image (portrait). Déduis d'abord sa psychologie, ses intentions et son apparence physique probable à partir de sa description ci-dessous (compétences, capacités). Si des indices physiques explicites sont fournis en fin de texte, respecte-les en priorité sur ce qui serait déduit.",
         ligneAffinite,
         ligneVocations,
         ligneAttributs,
         ligneTraits
-    ].join('\n');
+    ];
+
+    const portrait = personnage.portrait || {};
+    const genre = donnees.portraits.genres.find(g => g.id === portrait.genre);
+    const traitsCaractereChoisis = (portrait.traitsCaractere || [])
+        .map(id => donnees.portraits.traitsCaractere.find(t => t.id === id))
+        .filter(Boolean);
+    const traitsPhysiquesChoisis = (portrait.traitsPhysiques || [])
+        .map(id => trouverTraitPhysique(id, donnees.portraits))
+        .filter(Boolean);
+
+    const indices = [];
+    if (genre) indices.push(`Genre : ${genre.nom}`);
+    if (traitsCaractereChoisis.length) {
+        indices.push(`Traits de caractère complémentaires : ${traitsCaractereChoisis.map(t => `${t.nom} (${t.description})`).join(', ')}`);
+    }
+    if (traitsPhysiquesChoisis.length) {
+        indices.push(`Indices physiques : ${traitsPhysiquesChoisis.map(t => t.nom).join(', ')}`);
+    }
+
+    if (indices.length) {
+        lignes.push('', ...indices);
+    }
+
+    if (personnage.styleImage) {
+        lignes.push('', `Style : ${personnage.styleImage}`);
+    }
+
+    return lignes.join('\n');
+}
+
+function trouverTraitPhysique(id, portraits) {
+    const { carrure, visage, marques, tenue } = portraits.traitsPhysiques;
+    const toutesLesCategories = [...carrure, ...visage, ...Object.values(marques).flat(), ...tenue];
+    return toutesLesCategories.find(t => t.id === id);
 }
 
 /**
@@ -122,4 +156,6 @@ export function initPromptIA({ conteneurItems, champPrompt, personnage, donnees 
     });
 
     regenerer();
+
+    return { regenerer };
 }

@@ -1,4 +1,5 @@
 {
   "_commentaire": "Texte de contexte injecté dans les prompts IA (psychologie, portrait...). Modifiable ici si tu as une version plus officielle (ex: docs/fluff/monde.md), sans toucher au moteur.",
-  "contexte": "Jeu de rôle post-apocalyptique où la montée des eaux et une contamination organique appelée la \"Peste Écarlate\" ont ravagé le monde. L'humanité y est divisée en trois voies de survie : les Puristes (discipline et héritage humaniste), les Harmonistes (mutation et fusion avec l'écosystème) et les Suprématistes (fusion avec la technologie et la cybernétique)."
+  "contexte": "Jeu de rôle post-apocalyptique où la montée des eaux et une contamination organique appelée la \"Peste Écarlate\" ont ravagé le monde. L'humanité y est divisée en trois voies de survie : les Puristes (discipline et héritage humaniste), les Harmonistes (mutation et fusion avec l'écosystème) et les Suprématistes (fusion avec la technologie et la cybernétique).",
+  "styleImageDefaut": "Illustration réaliste et sombre, ambiance post-apocalyptique humide, lumière tamisée, cadrage portrait buste ou pied."
 }

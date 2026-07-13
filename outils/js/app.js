@@ -27,6 +27,25 @@ async function demarrer() {
         conteneurContenus: document.getElementById('contenus-methode')
     });
 
+    // Affinité (sélectionnable directement en Création libre, ou fixée
+    // automatiquement par le résultat du questionnaire — les deux modes
+    // doivent produire le même personnage).
+    function rendreSelecteurAffinite() {
+        const conteneur = document.getElementById('selecteur-affinite');
+        conteneur.innerHTML = donnees.affinites.map(affinite => `
+            <label class="affinite-option">
+                <input type="radio" name="affinite" value="${affinite.id}" ${personnage.affinite === affinite.id ? 'checked' : ''}>
+                <span>${affinite.nom}</span>
+            </label>
+        `).join('');
+        conteneur.querySelectorAll('input[type="radio"]').forEach(input => {
+            input.addEventListener('change', () => {
+                personnage.affinite = input.value;
+            });
+        });
+    }
+    rendreSelecteurAffinite();
+
     // Répartition des compétences (Fort/Moyen/Faible) — initialisée avant
     // les dés pour que les callbacks de creation.js puissent la référencer.
     const repartitionAttributs = initRepartitionAxe({
@@ -81,6 +100,7 @@ async function demarrer() {
             appliquerResultatQuestionnaire(personnage, idsVocations, idsAttributs);
             selecteursDes.synchroniser();
             rafraichirRepartitions();
+            rendreSelecteurAffinite();
 
             const resultat = document.getElementById('questionnaire-resultat');
             if (resultat) {

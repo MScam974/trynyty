@@ -10,6 +10,7 @@ import { chargerPersonnageStocke, sauvegarderPersonnage, exporterPersonnageJSON 
 import { initOnglets } from './ui.js';
 import { rendreZoneAffinite, rendreGrilleCompetences } from './fiche-competences.js';
 import { initPromptIA } from './prompt-ia.js';
+import { initPortrait } from './portrait.js';
 
 function rendreOngletPersonnage(personnage, donnees) {
     const champNomPerso = document.getElementById('fiche-nom-perso');
@@ -57,11 +58,18 @@ async function demarrer() {
 
     rendreOngletPersonnage(personnage, donnees);
 
-    initPromptIA({
+    const promptAPI = initPromptIA({
         conteneurItems: document.getElementById('trait-items'),
         champPrompt: document.getElementById('prompt-ia-texte'),
         personnage,
         donnees
+    });
+
+    initPortrait({
+        conteneur: document.getElementById('onglet-personnage'),
+        personnage,
+        donnees,
+        surChangement: () => promptAPI.regenerer()
     });
 
     const boutonCopier = document.getElementById('bouton-copier-prompt');

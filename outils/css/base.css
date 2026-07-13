@@ -39,6 +39,24 @@ main input[type="text"], main textarea { width: 100%; background: #1a1c24; color
 .a-venir { color: #777; font-style: italic; }
 #bouton-terminer { margin-top: 1.5rem; padding: .6rem 1.2rem; }
 
+/* Prompt IA */
+.trait-item { display: flex; justify-content: space-between; align-items: center; padding: .3rem 0; border-bottom: 1px solid #262a35; }
+.trait-jauge label { margin-left: .8rem; font-size: .85rem; cursor: pointer; }
+#prompt-ia-texte { width: 100%; margin-top: .8rem; background: #1a1c24; color: #eee; border: 1px solid #333; padding: .5rem; font-family: inherit; }
+.prompt-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .6rem; }
+.prompt-actions button, .prompt-actions a { padding: .4rem .8rem; background: #23262f; color: #eee; text-decoration: none; border: 1px solid #333; border-radius: 3px; }
+
+/* Panneaux repliables (portrait) */
+.panneau { border: 1px solid #333; margin-bottom: .5rem; border-radius: 3px; }
+.panneau summary { padding: .5rem .7rem; cursor: pointer; display: flex; align-items: center; gap: .5rem; user-select: none; }
+.panneau-options { padding: .6rem .7rem 1rem; display: flex; flex-wrap: wrap; gap: .4rem 1rem; }
+.panneau textarea { width: 100%; margin: 0 .7rem .8rem; box-sizing: border-box; background: #1a1c24; color: #eee; border: 1px solid #333; padding: .4rem; }
+.choix-option { display: flex; align-items: center; gap: .3rem; font-size: .9rem; }
+.etiquette-suggere { font-size: .7rem; background: #7a4a1a; color: #ffd8a8; padding: .05rem .35rem; border-radius: 2px; }
+.voyant { width: 8px; height: 8px; border-radius: 50%; background: #444; display: inline-block; }
+.voyant-actif { background: #4caf50; }
+.panneau-compteur { font-size: .8rem; color: #888; margin-left: auto; }
+
 /* Zone Affinité (onglet Compétences) */
 .zone-affinite { margin-bottom: 1.5rem; }
 .texte-info { color: #bbb; font-style: italic; }
