@@ -2,15 +2,15 @@
  * prompt-ia.js
  * Construit un prompt texte destiné à un assistant IA externe, pour
  * décrire la psychologie/les intentions/les émotions du personnage
- * (pas son apparence physique — prévue ailleurs, cf. spec "mode Fallout").
- * Se base sur les 9 compétences (intersections Vocation×Attribut) :
- * chacune a des mots-clés "qualité" (trait fort) et "défaut" (trait
- * faible) dans competences.json. Aucun mot n'est codé en dur ici.
+ * (pas son apparence physique — prévue ailleurs, cf. futur générateur
+ * de portrait basé sur data/portraits.json).
+ * Se base sur : le contexte du monde (data/monde.json), l'affinité,
+ * les rangs fort/moyen/faible des Vocations/Attributs, et les mots-clés
+ * qualité/défaut des 9 compétences (competences.json). Aucun texte de
+ * jeu n'est codé en dur ici.
  */
 
 import { sauvegarderPersonnage } from './stockage.js';
-
-const INTRODUCTION = "Décris la psychologie, les intentions et les émotions d'un personnage de fiction (pas son apparence physique), à partir des traits de caractère suivants, classés par intensité : \"faible\" signifie un trait peu présent, \"moyen\" est neutre et n'apporte pas d'indication, \"fort\" signifie un trait marqué chez le personnage.";
 
 function niveauVersJauge(niveau) {
     if (niveau >= 2) return 'fort';
@@ -18,14 +18,33 @@ function niveauVersJauge(niveau) {
     return 'faible';
 }
 
+function rangDe(taille, config) {
+    return config.des.libellesForce[taille] || '—';
+}
+
 /**
  * Assemble le texte du prompt à partir des réglages faible/moyen/fort
- * actuellement choisis (personnage.traitsPsychologiques).
+ * actuellement choisis (personnage.traitsPsychologiques) et des données
+ * de référence (contexte du monde, affinité, vocations, attributs).
  */
-export function genererPrompt(personnage, competencesData) {
-    const traits = [];
+export function genererPrompt(personnage, donnees) {
+    const { monde, affinites, vocations, attributs, competences, config } = donnees;
 
-    competencesData.forEach(competence => {
+    const affinite = affinites.find(a => a.id === personnage.affinite);
+    const ligneAffinite = affinite
+        ? `Affinité : ${affinite.nom}${affinite.descriptionCourte ? ` (${affinite.descriptionCourte})` : ''}`
+        : 'Affinité : non définie';
+
+    const ligneVocations = 'Vocations : ' + vocations
+        .map(v => `${v.nom} ${rangDe(personnage.vocations[v.id], config)}`)
+        .join(', ');
+
+    const ligneAttributs = 'Attributs : ' + attributs
+        .map(a => `${a.nom} ${rangDe(personnage.attributs[a.id], config)}`)
+        .join(', ');
+
+    const traits = [];
+    competences.forEach(competence => {
         const jauge = personnage.traitsPsychologiques[competence.id];
         if (jauge === 'fort' && competence.traitsQualite && competence.traitsQualite.length) {
             traits.push(`${competence.traitsQualite.join(' / ')} (fort)`);
@@ -34,12 +53,19 @@ export function genererPrompt(personnage, competencesData) {
         }
         // "moyen" : rien n'est ajouté, comme convenu.
     });
+    const ligneTraits = traits.length
+        ? `Traits de caractère : ${traits.join(', ')}.`
+        : "Traits de caractère : (aucun trait marqué pour l'instant).";
 
-    if (traits.length === 0) {
-        return INTRODUCTION;
-    }
-
-    return `${INTRODUCTION}\n\nTraits : ${traits.join(', ')}.`;
+    return [
+        monde.contexte,
+        '',
+        "Décris la psychologie, les intentions et les émotions du personnage suivant (pas son apparence physique) :",
+        ligneAffinite,
+        ligneVocations,
+        ligneAttributs,
+        ligneTraits
+    ].join('\n');
 }
 
 /**
@@ -51,9 +77,11 @@ export function genererPrompt(personnage, competencesData) {
  * @param {HTMLElement} options.conteneurItems
  * @param {HTMLTextAreaElement} options.champPrompt
  * @param {object} options.personnage
- * @param {object[]} options.competencesData
+ * @param {object} options.donnees - résultat complet de chargerDonnees()
  */
-export function initPromptIA({ conteneurItems, champPrompt, personnage, competencesData }) {
+export function initPromptIA({ conteneurItems, champPrompt, personnage, donnees }) {
+    const competencesData = donnees.competences;
+
     if (!personnage.traitsPsychologiques) {
         personnage.traitsPsychologiques = {};
     }
@@ -66,7 +94,7 @@ export function initPromptIA({ conteneurItems, champPrompt, personnage, competen
     });
 
     function regenerer() {
-        champPrompt.value = genererPrompt(personnage, competencesData);
+        champPrompt.value = genererPrompt(personnage, donnees);
         sauvegarderPersonnage(personnage);
     }
 

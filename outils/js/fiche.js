@@ -61,7 +61,7 @@ async function demarrer() {
         conteneurItems: document.getElementById('trait-items'),
         champPrompt: document.getElementById('prompt-ia-texte'),
         personnage,
-        competencesData: donnees.competences
+        donnees
     });
 
     const boutonCopier = document.getElementById('bouton-copier-prompt');

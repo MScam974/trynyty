@@ -3,6 +3,7 @@
     "id": "harmonie",
     "nom": "Harmonie",
     "sousTitre": "La Symbiose",
+    "descriptionCourte": "mutation et fusion avec l'écosystème",
     "description": "La conviction que l'humanité doit fusionner avec l'écosystème pour survivre. L'Harmoniste ne combat pas le milieu, il devient le milieu par la mutation.",
     "voiesAttribut": {
       "habilete": "Armure — Peau chitineuse et griffes",
@@ -14,6 +15,7 @@
     "id": "purete",
     "nom": "Pureté",
     "sousTitre": "L'Héritage",
+    "descriptionCourte": "discipline et héritage humaniste",
     "description": "La conviction que l'humanité doit préserver son essence originelle et ses valeurs spirituelles. Le Puriste rejette l'augmentation mécanique et la mutation biologique.",
     "voiesAttribut": {
       "habilete": "Excellence — Attribut porté à d12",
@@ -25,6 +27,7 @@
     "id": "suprematie",
     "nom": "Suprématie",
     "sousTitre": "L'Optimisation",
+    "descriptionCourte": "fusion avec la technologie et la cybernétique",
     "description": "La conviction que la biologie est une limite et que la technologie est la seule voie de survie. Chaque Suprématiste est indissociable de son Drone-Monture.",
     "voiesAttribut": {
       "habilete": "Prédateur — Drone terrestre rapide",
