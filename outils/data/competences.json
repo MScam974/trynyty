@@ -1,11 +1,47 @@
 [
-  { "id": "athletisme", "nom": "Athlétisme", "vocation": "exploration", "attribut": "habilete", "verbes": "Grimper, Sauter, Franchir" },
-  { "id": "survie",     "nom": "Survie",     "vocation": "exploration", "attribut": "instinct",  "verbes": "Pister, Orienter, Chasser" },
-  { "id": "observation","nom": "Observation","vocation": "exploration", "attribut": "intellect",  "verbes": "Fouiller, Surveiller, Analyser" },
-  { "id": "presence",   "nom": "Présence",   "vocation": "interaction", "attribut": "habilete", "verbes": "Imposer, Intimider, Maintenir" },
-  { "id": "persuasion", "nom": "Persuasion", "vocation": "interaction", "attribut": "instinct",  "verbes": "Convaincre, Négocier, Apaiser" },
-  { "id": "bluff",      "nom": "Bluff",      "vocation": "interaction", "attribut": "intellect",  "verbes": "Tromper, Feindre, Manipuler" },
-  { "id": "combat",     "nom": "Combat",     "vocation": "action",      "attribut": "habilete", "verbes": "CàC, Distance, Lourde" },
-  { "id": "discretion", "nom": "Discrétion", "vocation": "action",      "attribut": "instinct",  "verbes": "Se cacher, Infiltrer, Silencer" },
-  { "id": "artisanat",  "nom": "Artisanat",  "vocation": "action",      "attribut": "intellect",  "verbes": "Réparer, Crocheter, Fabriquer" }
+  {
+    "id": "athletisme", "nom": "Athlétisme", "vocation": "exploration", "attribut": "habilete", "verbes": "Grimper, Sauter, Franchir",
+    "specialitesGeneriques": [],
+    "specialitesAffinite": { "harmonie": "", "purete": "", "suprematie": "" }
+  },
+  {
+    "id": "survie", "nom": "Survie", "vocation": "exploration", "attribut": "instinct", "verbes": "Pister, Orienter, Chasser",
+    "specialitesGeneriques": [],
+    "specialitesAffinite": { "harmonie": "", "purete": "", "suprematie": "" }
+  },
+  {
+    "id": "observation", "nom": "Observation", "vocation": "exploration", "attribut": "intellect", "verbes": "Fouiller, Surveiller, Analyser",
+    "specialitesGeneriques": [],
+    "specialitesAffinite": { "harmonie": "", "purete": "", "suprematie": "" }
+  },
+  {
+    "id": "presence", "nom": "Présence", "vocation": "interaction", "attribut": "habilete", "verbes": "Imposer, Intimider, Maintenir",
+    "specialitesGeneriques": [],
+    "specialitesAffinite": { "harmonie": "", "purete": "", "suprematie": "" }
+  },
+  {
+    "id": "persuasion", "nom": "Persuasion", "vocation": "interaction", "attribut": "instinct", "verbes": "Convaincre, Négocier, Apaiser",
+    "specialitesGeneriques": [],
+    "specialitesAffinite": { "harmonie": "", "purete": "", "suprematie": "" }
+  },
+  {
+    "id": "bluff", "nom": "Bluff", "vocation": "interaction", "attribut": "intellect", "verbes": "Tromper, Feindre, Manipuler",
+    "specialitesGeneriques": [],
+    "specialitesAffinite": { "harmonie": "", "purete": "", "suprematie": "" }
+  },
+  {
+    "id": "combat", "nom": "Combat", "vocation": "action", "attribut": "habilete", "verbes": "CàC, Distance, Lourde",
+    "specialitesGeneriques": ["Arc", "Épée", "Lance"],
+    "specialitesAffinite": { "harmonie": "Griffes / Crocs", "purete": "Poings du Chi", "suprematie": "Technogreffe" }
+  },
+  {
+    "id": "discretion", "nom": "Discrétion", "vocation": "action", "attribut": "instinct", "verbes": "Se cacher, Infiltrer, Silencer",
+    "specialitesGeneriques": [],
+    "specialitesAffinite": { "harmonie": "", "purete": "", "suprematie": "" }
+  },
+  {
+    "id": "artisanat", "nom": "Artisanat", "vocation": "action", "attribut": "intellect", "verbes": "Réparer, Crocheter, Fabriquer",
+    "specialitesGeneriques": [],
+    "specialitesAffinite": { "harmonie": "", "purete": "", "suprematie": "" }
+  }
 ]

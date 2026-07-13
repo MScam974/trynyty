@@ -1,5 +1,5 @@
 [
-  { "id": "exploration", "nom": "Exploration", "indice": "Maîtrise du milieu" },
-  { "id": "interaction", "nom": "Interaction", "indice": "Rapports sociaux" },
-  { "id": "action",      "nom": "Action",      "indice": "Intervention physique" }
+  { "id": "exploration", "nom": "Exploration", "indice": "Maîtrise du milieu", "symbole": "🧭" },
+  { "id": "interaction", "nom": "Interaction", "indice": "Rapports sociaux", "symbole": "🗣️" },
+  { "id": "action",      "nom": "Action",      "indice": "Intervention physique", "symbole": "⚔️" }
 ]

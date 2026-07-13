@@ -8,6 +8,7 @@
 import { chargerDonnees } from './loader.js';
 import { chargerPersonnageStocke, sauvegarderPersonnage, exporterPersonnageJSON } from './stockage.js';
 import { initOnglets } from './ui.js';
+import { rendreZoneAffinite, rendreGrilleCompetences } from './fiche-competences.js';
 
 function rendreOngletPersonnage(personnage, donnees) {
     const champNomPerso = document.getElementById('fiche-nom-perso');
@@ -54,6 +55,18 @@ async function demarrer() {
     });
 
     rendreOngletPersonnage(personnage, donnees);
+
+    rendreZoneAffinite({
+        conteneurTexte: document.getElementById('affinite-texte'),
+        conteneurSchema: document.getElementById('affinite-schema'),
+        personnage,
+        donnees
+    });
+    rendreGrilleCompetences({
+        conteneur: document.getElementById('grille-competences'),
+        personnage,
+        donnees
+    });
 
     const boutonExport = document.getElementById('bouton-export');
     if (boutonExport) {

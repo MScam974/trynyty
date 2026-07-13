@@ -32,7 +32,8 @@ export async function chargerDonnees() {
         attributs,
         competences,
         specialisations,
-        portraits
+        portraits,
+        triangleAffinite
     ] = await Promise.all([
         chargerJSON('config'),
         chargerJSON('affinites'),
@@ -40,10 +41,11 @@ export async function chargerDonnees() {
         chargerJSON('attributs'),
         chargerJSON('competences'),
         chargerJSON('specialisations'),
-        chargerJSON('portraits')
+        chargerJSON('portraits'),
+        chargerJSON('triangle-affinite')
     ]);
 
-    return { config, affinites, vocations, attributs, competences, specialisations, portraits };
+    return { config, affinites, vocations, attributs, competences, specialisations, portraits, triangleAffinite };
 }
 
 /**

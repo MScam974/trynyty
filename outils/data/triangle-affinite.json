@@ -1,0 +1,42 @@
+{
+  "_commentaire": "Schéma décoratif/cliquable pour l'instant (cf. journal008.md). La correspondance précise entre chaque point et un rang d'évolution (Harmonie/Pureté/Suprématie) sera définie quand la mécanique d'évolution en jeu sera implémentée. Point de départ à la création : centre (id 'centre').",
+  "largeur": 360,
+  "hauteur": 300,
+  "pointDepart": "centre",
+  "points": {
+    "sommet":       [180, 20],
+
+    "mi-gauche":    [110, 140],
+    "mi-centre":    [180, 140],
+    "mi-droite":    [250, 140],
+
+    "int-gauche":   [140, 190],
+    "centre":       [180, 180],
+    "int-droite":   [220, 190],
+
+    "bas-gauche":   [50, 250],
+    "bas-centre":   [180, 250],
+    "bas-droite":   [310, 250]
+  },
+  "liens": [
+    ["bas-gauche", "sommet"],
+    ["sommet", "bas-droite"],
+
+    ["mi-gauche", "mi-centre"],
+    ["mi-centre", "mi-droite"],
+
+    ["mi-gauche", "int-gauche"],
+    ["mi-droite", "int-droite"],
+
+    ["mi-centre", "centre"],
+
+    ["centre", "int-gauche"],
+    ["centre", "int-droite"],
+
+    ["int-gauche", "bas-centre"],
+    ["int-droite", "bas-centre"],
+
+    ["bas-gauche", "bas-centre"],
+    ["bas-centre", "bas-droite"]
+  ]
+}

@@ -38,3 +38,34 @@ main input[type="text"], main textarea { width: 100%; background: #1a1c24; color
 .affinite-option { display: flex; align-items: center; gap: .4rem; }
 .a-venir { color: #777; font-style: italic; }
 #bouton-terminer { margin-top: 1.5rem; padding: .6rem 1.2rem; }
+
+/* Zone Affinité (onglet Compétences) */
+.zone-affinite { margin-bottom: 1.5rem; }
+.texte-info { color: #bbb; font-style: italic; }
+.schema-points { width: 240px; height: auto; display: block; }
+.schema-ligne { stroke: #555; stroke-width: 2; }
+.schema-point { fill: #1a1c24; stroke: #888; stroke-width: 2; cursor: pointer; }
+.schema-point:hover { fill: #3a3f52; }
+.schema-point-selectionne { fill: #c0392b; }
+
+/* Grille des compétences : visuellement 4x4 (en-têtes comprises), 3x3 de contenu */
+.competences-grille {
+    display: grid;
+    grid-template-columns: auto repeat(var(--nb-attributs), 1fr);
+    gap: .6rem;
+    align-items: stretch;
+}
+.grille-coin {}
+.grille-entete { font-weight: bold; padding: .3rem; text-align: center; }
+.grille-cellule { border: 1px solid #333; padding: .5rem; }
+.cellule-nom { font-weight: bold; margin-bottom: .3rem; }
+.cellule-pips { font-family: monospace; letter-spacing: 3px; margin-bottom: .5rem; }
+.cellule-select-label { display: block; font-size: .8rem; color: #999; margin-bottom: .4rem; }
+.cellule-select-label select { width: 100%; margin-top: .15rem; }
+
+/* Repli mobile : une colonne, chaque compétence empilée (cf. demande responsive) */
+@media (max-width: 640px) {
+    .competences-grille { grid-template-columns: 1fr; }
+    .grille-coin { display: none; }
+    .grille-entete { text-align: left; border-top: 1px solid #444; padding-top: .6rem; margin-top: .3rem; }
+}
