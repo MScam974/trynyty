@@ -9,6 +9,7 @@ import { chargerDonnees } from './loader.js';
 import { chargerPersonnageStocke, sauvegarderPersonnage, exporterPersonnageJSON } from './stockage.js';
 import { initOnglets } from './ui.js';
 import { rendreZoneAffinite, rendreGrilleCompetences } from './fiche-competences.js';
+import { initPromptIA } from './prompt-ia.js';
 
 function rendreOngletPersonnage(personnage, donnees) {
     const champNomPerso = document.getElementById('fiche-nom-perso');
@@ -55,6 +56,28 @@ async function demarrer() {
     });
 
     rendreOngletPersonnage(personnage, donnees);
+
+    initPromptIA({
+        conteneurItems: document.getElementById('trait-items'),
+        champPrompt: document.getElementById('prompt-ia-texte'),
+        personnage,
+        competencesData: donnees.competences
+    });
+
+    const boutonCopier = document.getElementById('bouton-copier-prompt');
+    if (boutonCopier) {
+        boutonCopier.addEventListener('click', async () => {
+            const texte = document.getElementById('prompt-ia-texte').value;
+            try {
+                await navigator.clipboard.writeText(texte);
+                const libelleInitial = boutonCopier.textContent;
+                boutonCopier.textContent = 'Copié !';
+                setTimeout(() => { boutonCopier.textContent = libelleInitial; }, 1500);
+            } catch (erreur) {
+                console.error('Copie impossible :', erreur);
+            }
+        });
+    }
 
     rendreZoneAffinite({
         conteneurTexte: document.getElementById('affinite-texte'),
