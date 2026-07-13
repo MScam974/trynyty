@@ -1,0 +1,78 @@
+/* base.css — provisoire, juste pour la lisibilité pendant le développement.
+   Le vrai découpage par composants (layout.css, questionnaire.css, fiche.css,
+   responsive.css) est prévu dans un commit dédié. */
+
+body {
+    font-family: system-ui, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: #12141a;
+    color: #e8e8e8;
+}
+
+.onglets { display: flex; gap: .5rem; margin-bottom: 1rem; }
+.onglet { padding: .5rem 1rem; background: #23262f; color: #ccc; border: none; cursor: pointer; }
+.onglet.actif { background: #4a5578; color: #fff; }
+.onglet-contenu { display: none; }
+.onglet-contenu.actif { display: block; }
+
+.question-carte { border: 1px solid #333; padding: 1rem; margin-bottom: 1rem; }
+.reponse-option { display: block; padding: .5rem; cursor: pointer; }
+.reponse-option.selectionnee { background: #2e3550; }
+
+.selecteur-de { margin-bottom: .75rem; }
+.selecteur-de-options label { margin-right: 1rem; cursor: pointer; }
+
+.repartition-groupe { border: 1px solid #333; padding: .5rem 1rem; margin-bottom: .5rem; }
+.repartition-rang { font-style: italic; color: #999; margin-left: .5rem; }
+.repartition-compte { float: right; color: #999; }
+.repartition-option { display: inline-block; margin-right: 1rem; }
+
+.erreur-chargement { background: #5a1a1a; color: #fff; padding: 1rem; }
+
+/* fiche.html */
+main label { display: block; margin-bottom: .75rem; }
+main input[type="text"], main textarea { width: 100%; background: #1a1c24; color: #eee; border: 1px solid #333; padding: .4rem; }
+.affinite-groupe { display: flex; gap: 1.5rem; }
+.affinite-option { display: flex; align-items: center; gap: .4rem; }
+.a-venir { color: #777; font-style: italic; }
+#bouton-terminer { margin-top: 1.5rem; padding: .6rem 1.2rem; }
+
+/* Prompt IA */
+.trait-item { display: flex; justify-content: space-between; align-items: center; padding: .3rem 0; border-bottom: 1px solid #262a35; }
+.trait-jauge label { margin-left: .8rem; font-size: .85rem; cursor: pointer; }
+#prompt-ia-texte { width: 100%; margin-top: .8rem; background: #1a1c24; color: #eee; border: 1px solid #333; padding: .5rem; font-family: inherit; }
+.prompt-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .6rem; }
+.prompt-actions button, .prompt-actions a { padding: .4rem .8rem; background: #23262f; color: #eee; text-decoration: none; border: 1px solid #333; border-radius: 3px; }
+
+/* Zone Affinité (onglet Compétences) */
+.zone-affinite { margin-bottom: 1.5rem; }
+.texte-info { color: #bbb; font-style: italic; }
+.schema-points { width: 240px; height: auto; display: block; }
+.schema-ligne { stroke: #555; stroke-width: 2; }
+.schema-point { fill: #1a1c24; stroke: #888; stroke-width: 2; cursor: pointer; }
+.schema-point:hover { fill: #3a3f52; }
+.schema-point-selectionne { fill: #c0392b; }
+
+/* Grille des compétences : visuellement 4x4 (en-têtes comprises), 3x3 de contenu */
+.competences-grille {
+    display: grid;
+    grid-template-columns: auto repeat(var(--nb-attributs), 1fr);
+    gap: .6rem;
+    align-items: stretch;
+}
+.grille-coin {}
+.grille-entete { font-weight: bold; padding: .3rem; text-align: center; }
+.grille-cellule { border: 1px solid #333; padding: .5rem; }
+.cellule-nom { font-weight: bold; margin-bottom: .3rem; }
+.cellule-pips { font-family: monospace; letter-spacing: 3px; margin-bottom: .5rem; }
+.cellule-select-label { display: block; font-size: .8rem; color: #999; margin-bottom: .4rem; }
+.cellule-select-label select { width: 100%; margin-top: .15rem; }
+
+/* Repli mobile : une colonne, chaque compétence empilée (cf. demande responsive) */
+@media (max-width: 640px) {
+    .competences-grille { grid-template-columns: 1fr; }
+    .grille-coin { display: none; }
+    .grille-entete { text-align: left; border-top: 1px solid #444; padding-top: .6rem; margin-top: .3rem; }
+}

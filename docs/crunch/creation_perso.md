@@ -109,3 +109,21 @@ Pour finaliser votre fiche (quelle que soit la méthode choisie), répondez à c
 1. **Sur l'Affinité :** *"Qu'est-ce qui, dans ton mode de vie, te rend le plus fier, et qu'est-ce qui te fait le plus peur chez les deux autres factions ?"*
 2. **Sur le Passé :** *"Quel objet de l'Ancien Monde possèdes-tu encore, et pourquoi ne t'en sépares-tu jamais ?"*
 3. **Sur la Vocation :** *"Quelle est la tâche que tu accomplis le mieux pour ton groupe, et quel est le prix physique ou mental que tu payes pour cet entraînement ?"*
+
+
+# Qualités morales
+En cas de vocation forte / attribut fort, vous pouvez choisir un trait de caractère dans le tableau suivant :
+
+| Tempérament fort |     **HABILETÉ** (Physique)    |       **INSTINCT** (Vital)       |  **INTELLECT** (Analytique)  |
+| :-----------------: | :----------------------------: | :------------------------------: | :--------------------------: |
+|   **EXPLORATION**   |  **Intrépide** / **Audacieux** | **Débrouillard** / **Résilient** | **Perspicace** / **Curieux** |
+|   **INTERACTION**   | **Assuré** / **Charismatique** |  **Diplomate** / **Empathique**  |  **Rusé** / **Calculateur**  |
+|      **ACTION**     |  **Combatif** / **Déterminé**  |    **Prévoyant** / **Prudent**   | **Ingénieux** / **Inventif** |
+
+Et de même en cas de vocation ou attribut faible :
+
+| Tempérament faible |        **HABILETÉ**        |              **INSTINCT**              |         **INTELLECT**         |
+| :-----------------: | :------------------------: | :------------------------------------: | :---------------------------: |
+|   **EXPLORATION**   | **Prudent** / **Casanier** |      **Confiant** / **Dépendant**      |   **Rêveur** / **Distrait**   |
+|   **INTERACTION**   |  **Discret** / **Réservé** | **Indépendant** / **Peu démonstratif** |      **Franc** / **Naïf**     |
+|      **ACTION**     | **Pacifique** / **Mesuré** |      **Spontané** / **Insouciant**     | **Pratique** / **Peu manuel** |
