@@ -60,7 +60,7 @@ export function genererPrompt(personnage, donnees) {
     const lignes = [
         monde.contexte,
         '',
-        "Décris ce personnage de fiction en vue de générer une image (portrait). Déduis d'abord sa psychologie, ses intentions et son apparence physique probable à partir de sa description ci-dessous (compétences, capacités). Si des indices physiques explicites sont fournis en fin de texte, respecte-les en priorité sur ce qui serait déduit.",
+        "Génère une image de ce personnage de fiction. Déduis d'abord sa psychologie, ses intentions et son apparence physique probable à partir de sa description ci-dessous (compétences, capacités). Si des indices physiques explicites sont fournis en fin de texte, respecte-les en priorité sur ce qui serait déduit.",
         ligneAffinite,
         ligneVocations,
         ligneAttributs,
@@ -132,25 +132,39 @@ export function initPromptIA({ conteneurItems, champPrompt, personnage, donnees 
         sauvegarderPersonnage(personnage);
     }
 
-    conteneurItems.innerHTML = competencesData.map(competence => `
+    conteneurItems.innerHTML = competencesData.map(competence => {
+        const qualite = (competence.traitsQualite || []).join(' / ');
+        const defaut = (competence.traitsDefaut || []).join(' / ');
+        const jaugeActuelle = personnage.traitsPsychologiques[competence.id];
+        return `
         <div class="trait-item" data-competence-id="${competence.id}">
-            <span class="trait-nom">${competence.nom}</span>
-            <div class="trait-jauge">
-                ${['faible', 'moyen', 'fort'].map(niveau => `
-                    <label>
-                        <input type="radio" name="trait-${competence.id}" value="${niveau}"
-                            ${personnage.traitsPsychologiques[competence.id] === niveau ? 'checked' : ''}>
-                        ${niveau}
-                    </label>
-                `).join('')}
+            <div class="trait-entete">
+                <span class="trait-nom">${competence.nom}</span>
+                <div class="trait-jauge">
+                    ${['faible', 'moyen', 'fort'].map(niveau => `
+                        <label>
+                            <input type="radio" name="trait-${competence.id}" value="${niveau}"
+                                ${jaugeActuelle === niveau ? 'checked' : ''}>
+                            ${niveau}
+                        </label>
+                    `).join('')}
+                </div>
+            </div>
+            <div class="trait-mots">
+                <span class="mot-defaut ${jaugeActuelle === 'faible' ? 'mot-actif' : ''}">${defaut || '—'}</span>
+                <span class="mot-separateur">·</span>
+                <span class="mot-qualite ${jaugeActuelle === 'fort' ? 'mot-actif' : ''}">${qualite || '—'}</span>
             </div>
         </div>
-    `).join('');
+    `;
+    }).join('');
 
     conteneurItems.querySelectorAll('input[type="radio"]').forEach(input => {
         input.addEventListener('change', () => {
             const bloc = input.closest('.trait-item');
             personnage.traitsPsychologiques[bloc.dataset.competenceId] = input.value;
+            bloc.querySelector('.mot-defaut').classList.toggle('mot-actif', input.value === 'faible');
+            bloc.querySelector('.mot-qualite').classList.toggle('mot-actif', input.value === 'fort');
             regenerer();
         });
     });
