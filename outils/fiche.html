@@ -37,6 +37,44 @@
             <h2>Affinité de départ</h2>
             <div id="fiche-affinite" class="affinite-groupe"></div>
 
+            <h2>Portrait (optionnel)</h2>
+            <p class="texte-info">Rien ici n'est obligatoire — ce qui n'est pas coché est simplement déduit par l'IA à partir de la psychologie du personnage.</p>
+
+            <details class="panneau" data-panneau="genre">
+                <summary>Genre <span class="voyant"></span></summary>
+                <div class="panneau-options"></div>
+            </details>
+
+            <details class="panneau" data-panneau="traits-caractere">
+                <summary>Traits de caractère <span class="voyant"></span> <span class="panneau-compteur"></span></summary>
+                <div class="panneau-options"></div>
+            </details>
+
+            <details class="panneau" data-panneau="physique-carrure">
+                <summary>Carrure <span class="voyant"></span> <span class="panneau-compteur"></span></summary>
+                <div class="panneau-options"></div>
+            </details>
+
+            <details class="panneau" data-panneau="physique-visage">
+                <summary>Visage <span class="voyant"></span> <span class="panneau-compteur"></span></summary>
+                <div class="panneau-options"></div>
+            </details>
+
+            <details class="panneau" data-panneau="physique-marques">
+                <summary>Marques particulières <span class="voyant"></span> <span class="panneau-compteur"></span></summary>
+                <div class="panneau-options"></div>
+            </details>
+
+            <details class="panneau" data-panneau="physique-tenue">
+                <summary>Tenue <span class="voyant"></span> <span class="panneau-compteur"></span></summary>
+                <div class="panneau-options"></div>
+            </details>
+
+            <details class="panneau">
+                <summary>Style d'image <span class="voyant voyant-actif"></span></summary>
+                <textarea id="portrait-style" rows="2"></textarea>
+            </details>
+
             <h2>Prompt IA — psychologie du personnage</h2>
             <p class="texte-info">Règle chaque jauge de faible à fort (pré-rempli à partir de la création, modifiable). Le texte ci-dessous se met à jour automatiquement.</p>
             <div id="trait-items"></div>
