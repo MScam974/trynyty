@@ -9,7 +9,7 @@ import { chargerDonnees } from './loader.js';
 import { chargerPersonnageStocke, sauvegarderPersonnage, exporterPersonnageJSON } from './stockage.js';
 import { initOnglets } from './ui.js';
 import { rendreZoneAffinite } from './fiche-competences.js';
-import { initTableauCompetences } from './tableau-competences.js';
+import { initTableauCompetences, xpDepensee, xpDisponible } from './tableau-competences.js';
 import { initPromptIA } from './prompt-ia.js';
 import { initPortrait } from './portrait.js';
 
@@ -95,11 +95,27 @@ async function demarrer() {
         personnage,
         donnees
     });
-    initTableauCompetences({
+    function rendreExperience() {
+        const champTotal = document.getElementById('xp-total');
+        champTotal.value = personnage.experience.total;
+        document.getElementById('xp-depenses').textContent = xpDepensee(personnage);
+        document.getElementById('xp-disponible').textContent = xpDisponible(personnage);
+    }
+
+    const tableauAPI = initTableauCompetences({
         conteneur: document.getElementById('tableau-competences'),
         personnage,
         donnees,
-        editable: false
+        editable: false,
+        surChangement: rendreExperience
+    });
+
+    rendreExperience();
+    document.getElementById('xp-total').addEventListener('input', (evenement) => {
+        personnage.experience.total = parseInt(evenement.target.value, 10) || 0;
+        sauvegarderPersonnage(personnage);
+        rendreExperience();
+        tableauAPI.rafraichir(); // redébloque/verrouille les cases de progression selon le nouveau total
     });
 
     const boutonExport = document.getElementById('bouton-export');

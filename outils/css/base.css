@@ -64,6 +64,8 @@ main input[type="text"], main textarea { width: 100%; background: #1a1c24; color
 .competence-checks { display: flex; gap: .8rem; margin: .3rem 0; }
 .check-option { display: flex; align-items: center; gap: .2rem; font-size: .8rem; cursor: pointer; }
 .competence-niveau { font-size: .75rem; color: #aaa; margin: .3rem 0; }
+.competence-progression { display: flex; gap: .3rem; margin-bottom: .4rem; }
+.pip-xp input { width: 14px; height: 14px; }
 
 /* Repli mobile : le tableau devient scrollable horizontalement plutôt
    que de casser la mise en page (retouche visuelle complète à venir). */

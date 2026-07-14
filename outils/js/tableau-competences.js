@@ -12,8 +12,22 @@
  * dupliquer.
  */
 
-import { determinerRangs, recalculerNiveaux } from './competences.js';
+import { determinerRangs, recalculerNiveaux, seuilPourNiveau } from './competences.js';
 import { sauvegarderPersonnage } from './stockage.js';
+
+/**
+ * Total de points d'expérience déjà dépensés (toutes compétences confondues).
+ */
+export function xpDepensee(personnage) {
+    return Object.values(personnage.progressionCompetences || {}).reduce((a, b) => a + b, 0);
+}
+
+/**
+ * Points d'expérience gagnés mais pas encore dépensés.
+ */
+export function xpDisponible(personnage) {
+    return (personnage.experience?.total || 0) - xpDepensee(personnage);
+}
 
 function affecterDe(cible, id, taille) {
     const dejaUtilisePar = Object.entries(cible).find(([autreId, v]) => autreId !== id && v === taille);
@@ -59,6 +73,12 @@ export function initTableauCompetences({ conteneur, personnage, donnees, editabl
     }
     if (!personnage.choixSpecialites) {
         personnage.choixSpecialites = {};
+    }
+    if (!personnage.progressionCompetences) {
+        personnage.progressionCompetences = {};
+    }
+    if (!personnage.experience) {
+        personnage.experience = { total: 0 };
     }
 
     function normaliserSelections() {
@@ -113,9 +133,25 @@ export function initTableauCompetences({ conteneur, personnage, donnees, editabl
         let blocSpecialites = '';
         if (!editable) {
             const choixExistant = personnage.choixSpecialites[competence.id] || {};
-            const optionAffinite = (competence.specialitesAffinite || {})[personnage.affinite];
+            const progression = personnage.progressionCompetences[competence.id] || 0;
+            const niveauTotal = resultat.niveau + progression;
+            const seuilTotal = seuilPourNiveau(niveauTotal, config);
+            const disponible = xpDisponible(personnage);
+
+            const pipsXP = [1, 2, 3].map(n => {
+                const coche = progression >= n;
+                const estLeSuivant = n === progression + 1;
+                const verrouille = coche ? (n !== progression) : !(estLeSuivant && disponible >= 1);
+                return `
+                    <label class="pip-xp" title="1 point d'expérience">
+                        <input type="checkbox" class="check-xp" data-index="${n}" ${coche ? 'checked' : ''} ${verrouille ? 'disabled' : ''}>
+                    </label>
+                `;
+            }).join('');
+
             blocSpecialites = `
-                <div class="competence-niveau">Niveau ${resultat.niveau} · Seuil ${resultat.seuil}</div>
+                <div class="competence-niveau">Niveau ${niveauTotal} · Seuil ${seuilTotal}</div>
+                <div class="competence-progression" title="Progression en jeu (1 case = 1 point d'expérience)">${pipsXP}</div>
                 <label class="cellule-select-label">Spécialité
                     <select class="select-specialite" data-type="generique"></select>
                 </label>
@@ -241,6 +277,30 @@ export function initTableauCompetences({ conteneur, personnage, donnees, editabl
                     personnage.choixSpecialites[competence.id] = personnage.choixSpecialites[competence.id] || {};
                     personnage.choixSpecialites[competence.id].affinite = selectAffinite.value;
                     sauvegarderPersonnage(personnage);
+                });
+
+                cellule.querySelectorAll('.check-xp').forEach(input => {
+                    input.addEventListener('change', () => {
+                        const index = parseInt(input.dataset.index, 10);
+                        const actuel = personnage.progressionCompetences[competence.id] || 0;
+
+                        if (input.checked) {
+                            if (index !== actuel + 1 || xpDisponible(personnage) < 1) {
+                                input.checked = false;
+                                return;
+                            }
+                            personnage.progressionCompetences[competence.id] = index;
+                        } else {
+                            if (index !== actuel) {
+                                input.checked = true;
+                                return;
+                            }
+                            personnage.progressionCompetences[competence.id] = actuel - 1;
+                        }
+                        sauvegarderPersonnage(personnage);
+                        rendre();
+                        if (typeof surChangement === 'function') surChangement();
+                    });
                 });
             });
         }

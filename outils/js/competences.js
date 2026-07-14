@@ -33,7 +33,7 @@ function competencesParValeurAxe(competencesData, axe) {
     return groupes;
 }
 
-function seuilPourNiveau(niveau, config) {
+export function seuilPourNiveau(niveau, config) {
     const table = config.seuilsReussite.table;
     return (table.find(s => s.niveau === niveau) || table[0]).seuil;
 }

@@ -34,6 +34,12 @@
                 <textarea id="fiche-archetype" rows="3"></textarea>
             </label>
 
+            <h2>Points d'expérience</h2>
+            <label>Total gagné en jeu
+                <input type="number" id="xp-total" min="0" step="1">
+            </label>
+            <p class="texte-info">Dépensés : <span id="xp-depenses">0</span> · Disponibles : <span id="xp-disponible">0</span></p>
+
             <h2>Affinité de départ</h2>
             <div id="fiche-affinite" class="affinite-groupe"></div>
 
@@ -77,9 +83,7 @@
 
             <details class="panneau panneau-principal" open>
                 <summary>Prompt IA — psychologie du personnage <span class="voyant voyant-actif"></span></summary>
-                <p class="texte-info">Règle chaque jauge de faible à fort (pré-rempli à partir de la création, modifiable). Le texte ci-dessous se met à jour automatiquement.</p>
-                <label class="case-option"><input type="checkbox" id="case-inclure-affinite"> Inclure l'affinité dans le prompt (peut donner des résultats plus extrêmes)</label>
-                <div id="trait-items"></div>
+
                 <textarea id="prompt-ia-texte" rows="6" readonly></textarea>
                 <div class="prompt-actions">
                     <button id="bouton-copier-prompt">Copier le prompt</button>
@@ -88,6 +92,13 @@
                     <a href="https://copilot.microsoft.com" target="_blank" rel="noopener">Ouvrir Copilot</a>
                     <a href="https://www.kimi.com" target="_blank" rel="noopener">Ouvrir Kimi</a>
                 </div>
+
+                <details class="panneau">
+                    <summary>Données détaillées <span class="voyant voyant-actif"></span></summary>
+                    <p class="texte-info">Règle chaque jauge de faible à fort (pré-rempli à partir de la création, modifiable). Le prompt ci-dessus se met à jour automatiquement.</p>
+                    <label class="case-option"><input type="checkbox" id="case-inclure-affinite"> Inclure l'affinité dans le prompt (peut donner des résultats plus extrêmes)</label>
+                    <div id="trait-items"></div>
+                </details>
             </details>
         </section>
 
