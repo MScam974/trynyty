@@ -8,6 +8,21 @@
 
 /**
  * Crée un objet personnage vide, structure unique manipulée par tout le moteur.
+ *
+ * Forme d'une instance dans personnage.inventaire (une entrée par objet
+ * réellement possédé — le catalogue armes/armures/equipements.json décrit
+ * un TYPE, ceci décrit CE QUE le personnage en possède) :
+ *   {
+ *     id: string,              // identifiant unique de l'instance (pas du catalogue)
+ *     catalogueId: string,     // référence vers armes/armures/equipements.json
+ *     typeCatalogue: 'arme' | 'armure' | 'equipement',
+ *     nom: string,             // nom propre optionnel ("Dard", "l'arbalète de Daryl"...)
+ *     qualite: number,         // 0-5, fixe pour cette instance (cf. config.equipement.qualite)
+ *     affiniteObjet: number,   // 0-3, pouvoirs d'affinité (cf. config.equipement.affiniteObjet)
+ *     note: string,            // texte libre du joueur
+ *     origine: 'creation' | 'jeu',
+ *     emplacementCreation: string | null  // id de l'emplacement (cf. config.equipement.emplacementsCreation), null si trouvé en jeu
+ *   }
  */
 export function creerPersonnage() {
     return {
@@ -19,7 +34,7 @@ export function creerPersonnage() {
         vocations: {},
         competences: {},
         specialisations: [],
-        equipements: [],
+        inventaire: [],
         pouvoirs: [],
         portrait: { genre: null, traitsCaractere: [], traitsPhysiques: [] },
         historique: { relique: '', histoire: '', liens: '' },

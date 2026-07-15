@@ -79,6 +79,11 @@
     },
     "penaliteAffiniteCroisee": {
       "_commentaire": "Un personnage utilisant un objet dont l'affinité diffère de la sienne (et n'est pas 'commune') doit subir une pénalité — règle pas encore définie précisément, à trancher avant de l'implémenter dans le moteur de résolution."
+    },
+    "surcharge": {
+      "_commentaire": "Pénalité au seuil de réussite quand l'encombrement porté dépasse le maximum. 0 si dépassement <= 0. +malusInitial (flat) si dépassement entre 1 et palierInitial. Au-delà de palierInitial, +1 supplémentaire par point de dépassement en plus. Exemple avec malusInitial=1, palierInitial=5 : dépassement 1-5 -> +1 ; dépassement 6 -> +2 ; dépassement 7 -> +3...",
+      "malusInitial": 1,
+      "palierInitial": 5
     }
   }
 }

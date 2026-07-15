@@ -12,6 +12,7 @@ import { rendreZoneAffinite } from './fiche-competences.js';
 import { initTableauCompetences, xpDepensee, xpDisponible } from './tableau-competences.js';
 import { initPromptIA } from './prompt-ia.js';
 import { initPortrait } from './portrait.js';
+import { initEquipement } from './equipement.js';
 
 function rendreOngletPersonnage(personnage, donnees) {
     const champNomPerso = document.getElementById('fiche-nom-perso');
@@ -122,6 +123,12 @@ async function demarrer() {
     if (boutonExport) {
         boutonExport.addEventListener('click', () => exporterPersonnageJSON(personnage));
     }
+
+    initEquipement({
+        conteneur: document.getElementById('zone-equipement'),
+        personnage,
+        donnees
+    });
 
     window.personnage = personnage;
 }
