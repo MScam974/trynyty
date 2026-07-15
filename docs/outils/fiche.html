@@ -15,7 +15,10 @@
             <span class="entete-marque">TRYNYTY</span>
             <span class="entete-sous">Fiche de terrain</span>
         </div>
-        <button id="bouton-export" class="bouton-icone" title="Exporter en JSON">⭳</button>
+        <div class="entete-actions">
+            <button id="bouton-mode" class="bouton-mode" title="Basculer Jeu / Édition">🎮 Jeu</button>
+            <button id="bouton-export" class="bouton-icone" title="Exporter en JSON">⭳</button>
+        </div>
     </header>
 
     <main id="contenus-fiche" class="contenu-principal">
@@ -34,10 +37,13 @@
 
             <div class="carte">
                 <h2>Points d'expérience</h2>
-                <label>Total gagné en jeu
-                    <input type="number" id="xp-total" min="0" step="1">
-                </label>
-                <p class="texte-info">Dépensés : <span id="xp-depenses">0</span> · Disponibles : <span id="xp-disponible">0</span></p>
+                <p id="xp-resume-jeu" class="synth-ligne-seuil-info"></p>
+                <div class="edition-seulement">
+                    <label>Total gagné en jeu
+                        <input type="number" id="xp-total" min="0" step="1">
+                    </label>
+                    <p class="texte-info">Dépensés : <span id="xp-depenses">0</span> · Disponibles : <span id="xp-disponible">0</span></p>
+                </div>
             </div>
 
             <div class="carte">
@@ -45,7 +51,7 @@
                 <div id="fiche-affinite" class="affinite-groupe"></div>
             </div>
 
-            <div class="carte">
+            <div class="carte edition-seulement">
                 <h2>Portrait (optionnel)</h2>
                 <p class="texte-info">Rien ici n'est obligatoire — ce qui n'est pas coché est simplement déduit par l'IA à partir de la psychologie du personnage.</p>
 
@@ -85,7 +91,7 @@
             </details>
             </div>
 
-            <details class="panneau panneau-principal" open>
+            <details class="panneau panneau-principal edition-seulement" open>
                 <summary>Prompt IA — psychologie du personnage <span class="voyant voyant-actif"></span></summary>
 
                 <textarea id="prompt-ia-texte" rows="6" readonly></textarea>
@@ -114,7 +120,8 @@
 
             <div class="carte">
                 <h2>Compétences</h2>
-                <div id="tableau-competences"></div>
+                <div id="competences-synthetique" class="mode-jeu-seulement"></div>
+                <div id="tableau-competences" class="edition-seulement"></div>
             </div>
         </section>
 
@@ -126,8 +133,9 @@
 
             <div class="carte">
                 <h2>Compétences passives (résistances)</h2>
-                <p class="texte-info">Reflet automatique des compétences actives : même niveau, mais c'est l'adversaire qui doit battre le seuil.</p>
-                <div id="competences-passives"></div>
+                <p class="texte-info edition-seulement">Reflet automatique des compétences actives : même niveau, mais c'est l'adversaire qui doit battre le seuil.</p>
+                <div id="passives-synthetique" class="mode-jeu-seulement"></div>
+                <div id="competences-passives" class="edition-seulement"></div>
             </div>
         </section>
 

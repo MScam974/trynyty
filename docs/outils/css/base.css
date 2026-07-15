@@ -364,3 +364,36 @@ button:active { transform: translateY(1px); }
     .nav-bas .onglet .nav-icone { font-size: 1rem; }
     .nav-bas .onglet .nav-libelle { font-size: .72rem; }
 }
+
+/* ---------- Mode Jeu / Édition ---------- */
+.entete-actions { display: flex; align-items: center; gap: .5rem; }
+.bouton-mode { border-radius: 999px; padding: .4rem .8rem; font-size: .7rem; }
+.mode-jeu .bouton-mode { background: var(--accent); color: var(--accent-texte); border-color: var(--accent); }
+
+.mode-jeu-seulement { display: none; }
+.mode-jeu .mode-jeu-seulement { display: block; }
+.mode-jeu .edition-seulement { display: none; }
+
+/* ---------- Vue synthétique (grille + liste, mode Jeu) ---------- */
+.grille-synthetique { border-collapse: collapse; width: 100%; font-size: .78rem; margin-bottom: 1.2rem; }
+.grille-synthetique th, .grille-synthetique td { border: 1px solid var(--border); padding: .4rem; text-align: center; }
+.grille-synthetique thead th { background: var(--surface-2); }
+.grille-synthetique tbody th { background: var(--surface-2); text-align: left; }
+.synth-logo {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--accent); color: var(--accent-texte);
+    font-family: var(--police-libelle); font-weight: 700; font-size: .68rem;
+    margin-right: .3rem; vertical-align: middle;
+}
+.synth-nom { font-family: var(--police-libelle); font-size: .65rem; text-transform: uppercase; letter-spacing: .04em; color: var(--texte-att); vertical-align: middle; }
+.grille-synthetique td { color: var(--accent-vif); font-family: var(--police-libelle); letter-spacing: 1px; }
+
+.synth-groupe { margin-bottom: 1rem; }
+.synth-groupe-titre { font-family: var(--police-libelle); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--texte-faible); border-bottom: 1px solid var(--border); padding-bottom: .3rem; margin-bottom: .4rem; }
+.synth-ligne { display: flex; align-items: baseline; gap: .5rem; padding: .3rem 0; font-size: .85rem; flex-wrap: wrap; }
+.synth-ligne-nom { font-weight: bold; flex: 1 1 auto; min-width: 100px; }
+.synth-ligne-des { font-family: var(--police-libelle); font-size: .68rem; color: var(--texte-faible); }
+.synth-ligne-pips { color: var(--accent-vif); font-family: var(--police-libelle); letter-spacing: 1px; }
+.synth-ligne-seuil { font-size: .68rem; color: var(--texte-att); }
+.synth-ligne-seuil-info { font-size: .82rem; color: var(--accent-vif); font-family: var(--police-libelle); margin: 0 0 .8rem; }
