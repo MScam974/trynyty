@@ -7,9 +7,9 @@
  * qui partagent la même forme Vocation x Attribut.
  */
 
-function pipsTexte(niveau) {
-    const n = Math.max(niveau || 0, 0);
-    return n > 0 ? 'O'.repeat(n) : '—';
+function pipsTexte(niveau, maximum = 5) {
+    const n = Math.min(Math.max(niveau || 0, 0), maximum);
+    return '■'.repeat(n) + '⬚'.repeat(maximum - n);
 }
 
 function logoDe(taille) {

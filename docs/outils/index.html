@@ -12,6 +12,21 @@
     </header>
 
     <main>
+        <section id="gestion-personnage" class="carte" hidden>
+            <h2>Personnage en cours</h2>
+            <p class="texte-info">Un personnage existe déjà dans ce navigateur. Modifie-le directement ci-dessous, ou choisis une action :</p>
+            <div class="gestion-actions">
+                <button id="bouton-sauvegarder">💾 Sauvegarder</button>
+                <button id="bouton-charger">📂 Charger un JSON</button>
+                <input type="file" id="fichier-charger" accept="application/json" hidden>
+            </div>
+            <div class="gestion-actions gestion-actions-danger">
+                <button id="bouton-relancer-questionnaire">🔁 Relancer le questionnaire</button>
+                <button id="bouton-relancer-libre">🔁 Relancer la création libre</button>
+                <button id="bouton-reset-total">🗑️ Reset total</button>
+            </div>
+        </section>
+
         <nav id="onglets-methode" class="onglets">
             <button class="onglet actif" data-onglet="questionnaire">Questionnaire</button>
             <button class="onglet" data-onglet="creation-libre">Création libre</button>

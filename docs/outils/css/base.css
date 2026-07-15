@@ -397,3 +397,8 @@ button:active { transform: translateY(1px); }
 .synth-ligne-pips { color: var(--accent-vif); font-family: var(--police-libelle); letter-spacing: 1px; }
 .synth-ligne-seuil { font-size: .68rem; color: var(--texte-att); }
 .synth-ligne-seuil-info { font-size: .82rem; color: var(--accent-vif); font-family: var(--police-libelle); margin: 0 0 .8rem; }
+
+/* ---------- Panneau de gestion (personnage existant, index.html) ---------- */
+.gestion-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin: .8rem 0; }
+.gestion-actions-danger button { border-color: var(--danger); color: var(--danger-vif); }
+.gestion-actions-danger button:hover { background: rgba(193,98,45,.12); }

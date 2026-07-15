@@ -10,21 +10,84 @@ import { creerPersonnage, appliquerResultatQuestionnaire } from './personnage.js
 import { initOnglets } from './ui.js';
 import { initQuestionnaire } from './questionnaire.js';
 import { initTableauCompetences } from './tableau-competences.js';
-import { sauvegarderPersonnage } from './stockage.js';
+import { sauvegarderPersonnage, chargerPersonnageStocke, effacerPersonnageStocke, importerPersonnageJSON } from './stockage.js';
 
 async function demarrer() {
     const donnees = await chargerDonnees();
     const questionnaireData = await chargerQuestionnaire();
-    const personnage = creerPersonnage();
+
+    // Si un personnage existe déjà dans ce navigateur, on repart dessus
+    // plutôt que d'en créer un nouveau — sauf si une action explicite
+    // (relancer questionnaire/création libre) a été demandée juste avant.
+    const actionForcee = sessionStorage.getItem('trynyty-action-forcee');
+    sessionStorage.removeItem('trynyty-action-forcee');
+
+    const personnageExistant = chargerPersonnageStocke();
+    const personnage = (personnageExistant && !actionForcee) ? personnageExistant : creerPersonnage();
 
     const idsVocations = donnees.vocations.map(v => v.id);
     const idsAttributs = donnees.attributs.map(a => a.id);
 
+    // Panneau de gestion : affiché seulement si un personnage existait déjà
+    // et qu'aucune méthode de création n'a été explicitement relancée.
+    const afficherGestion = !!personnageExistant && !actionForcee;
+    const panneauGestion = document.getElementById('gestion-personnage');
+    const zoneOnglets = document.getElementById('onglets-methode');
+    const zoneContenus = document.getElementById('contenus-methode');
+    panneauGestion.hidden = !afficherGestion;
+    zoneOnglets.hidden = afficherGestion;
+    zoneContenus.hidden = afficherGestion;
+
+    document.getElementById('bouton-sauvegarder')?.addEventListener('click', (e) => {
+        sauvegarderPersonnage(personnage);
+        const bouton = e.currentTarget;
+        const libelle = bouton.textContent;
+        bouton.textContent = '✓ Sauvegardé';
+        setTimeout(() => { bouton.textContent = libelle; }, 1200);
+    });
+
+    document.getElementById('bouton-reset-total')?.addEventListener('click', () => {
+        if (!confirm('Effacer entièrement ce personnage ? Cette action est irréversible.')) return;
+        effacerPersonnageStocke();
+        location.reload();
+    });
+
+    document.getElementById('bouton-relancer-questionnaire')?.addEventListener('click', () => {
+        if (!confirm('Repartir de zéro avec le questionnaire ? Le personnage actuel sera remplacé.')) return;
+        sauvegarderPersonnage(creerPersonnage());
+        sessionStorage.setItem('trynyty-action-forcee', 'questionnaire');
+        location.reload();
+    });
+
+    document.getElementById('bouton-relancer-libre')?.addEventListener('click', () => {
+        if (!confirm('Repartir de zéro en création libre ? Le personnage actuel sera remplacé.')) return;
+        sauvegarderPersonnage(creerPersonnage());
+        sessionStorage.setItem('trynyty-action-forcee', 'creation-libre');
+        location.reload();
+    });
+
+    const champFichier = document.getElementById('fichier-charger');
+    document.getElementById('bouton-charger')?.addEventListener('click', () => champFichier.click());
+    champFichier?.addEventListener('change', async () => {
+        const fichier = champFichier.files[0];
+        if (!fichier) return;
+        try {
+            const personnageCharge = await importerPersonnageJSON(fichier);
+            sauvegarderPersonnage(personnageCharge);
+            location.reload();
+        } catch (erreur) {
+            alert('Fichier invalide : ' + erreur.message);
+        }
+    });
+
     // Onglets : bascule entre les deux méthodes de création
-    initOnglets({
+    const onglets = initOnglets({
         conteneurOnglets: document.getElementById('onglets-methode'),
         conteneurContenus: document.getElementById('contenus-methode')
     });
+    if (actionForcee === 'creation-libre') {
+        onglets.activer('creation-libre');
+    }
 
     // Affinité (sélectionnable directement en Création libre, ou fixée
     // automatiquement par le résultat du questionnaire — les deux modes
