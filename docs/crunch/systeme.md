@@ -4,6 +4,8 @@
 
 Le monde est hostile, incertain et en perpétuel changement. Dans ce système, votre personnage ne se définit pas par une liste interminable de chiffres, mais par sa capacité à interagir avec son environnement grâce à une combinaison de talents naturels et d'expertise apprise.
 
+> **Le mot du meneur de jeu** : tout ce que ces règles laissent à l'appréciation de la table (durée d'une action, difficulté d'un enjeu narratif, moment où une dérive d'affinité devient réelle...) revient au MJ. Il questionne, il écoute, il décide, et il a le dernier mot.
+
 ### 1. La philosophie du système
 
 Le système repose sur un triptyque fondamental : **L'Inné**, **L'Acquis** et **Le Seuil**.
@@ -70,23 +72,21 @@ La qualité de votre action est déterminée par la synergie des deux dés :
 - **Réussite Critique :** Si **les deux dés** affichent un résultat égal ou supérieur au seuil de réussite de la compétence.
   - _Effet :_ Votre succès est total et comporte un avantage narratif majeur ou une efficacité accrue.
 - **Échec Critique :** Si **les deux dés** affichent un résultat inférieur au seuil de réussite.
-  - _Effet :_ La situation se dégrade, un équipement casse (voir *Surcharge et casse*, section VI), ou vous subissez une conséquence imprévue.
+  - _Effet :_ La situation se dégrade, un équipement casse, ou vous subissez une conséquence imprévue.
 
 ### 4. État et Malus (La loi de la taille)
 
-Votre état physique, la difficulté de l'environnement ou une surcharge d'équipement affectent directement vos dés ou votre seuil :
+Votre état physique, la difficulté de l'environnement ou une surcharge d'équipement affectent directement vos dés ou votre seuil — mais jamais votre niveau de maîtrise lui-même, qui reste acquis :
 
 - **Normal :** Utilisez votre dé nominal (`d6`, `d8`, `d10`).
 - **Affaibli :** La taille du dé diminue d'un cran (`d10` → `d8`, `d8` → `d6`, `d6` → `d4`).
 - **Critique :** Le dé est plafonné à `d4`.
-- **Prendre son temps :** Consacrer plus de temps à une action (minutes plutôt que secondes, heures plutôt que minutes) abaisse le seuil de réussite de 1. À l'inverse, agir dans l'urgence l'augmente de 1.
-- **Être aidé :** Un allié qui prête main-forte peut soit lancer ses propres dés en plus des vôtres (un seul dé dépassant le seuil suffit), soit faire baisser le seuil de 1 par aide supplémentaire (un assaut à quatre contre un seul adversaire réussit plus facilement qu'un affrontement en duel).
 
-_Note : Les bonus de maîtrise (niveaux) ne changent pas, seule la taille de votre "moteur" (le dé), ou le seuil à atteindre, changent._
+_Note : un malus touche soit la taille de votre dé (le "moteur"), soit le seuil à atteindre (la "cible") — jamais votre niveau de compétence, qui reste ce que vous avez appris une fois pour toutes._
 
 ### 5. Table des Seuils de Réussite
 
-Votre niveau dans une compétence (de 0 à 5) détermine directement le seuil que vous devez atteindre :
+Votre niveau effectif dans une compétence (compétence + spécialité éventuelle, voir section II.7) détermine directement le seuil que vous devez atteindre :
 
 | Niveau | Seuil de Réussite |
 |:------:|:------------------:|
@@ -96,17 +96,48 @@ Votre niveau dans une compétence (de 0 à 5) détermine directement le seuil qu
 | **3** | **6+** |
 | **4** | **5+** |
 | **5** | **4+** |
+| **6** | **3+** |
+| **7** | **2+** |
 
-Les niveaux 0 à 2 sont atteignables dès la création (1 point d'Attribut + 1 point de Vocation au maximum). Les niveaux 3 à 5 s'acquièrent en jeu, par l'expérience (voir *Progression*, section VII).
+Les niveaux 0 à 2 sont atteignables dès la création (1 point d'Attribut + 1 point de Vocation au maximum). Les niveaux 3 à 5 s'acquièrent en jeu, par l'expérience (voir *Progression*, section VII). Les niveaux 6 et 7 ne s'atteignent qu'en combinant compétence maîtrisée et spécialité poussée à fond (voir section II.7) — 2+ reste le plancher absolu du jeu, il n'existe pas de réussite garantie à 100 % hors "prendre son temps" (section VI).
 
-### 6. Spécialisation
+### 6. Temps et actions
 
-Chaque compétence peut recevoir deux spécialités, choisies librement, sans condition de niveau minimum :
+#### Prendre son temps ou aller vite
 
-- **Une spécialité générique**, propre au matériau ou à la méthode employée (par exemple, pour *Combat* : Arc, Épée, Lance).
-- **Un pouvoir d'affinité**, unique, disponible uniquement si le personnage appartient à l'affinité concernée (voir section IV).
+Chaque action entreprise correspond naturellement à une catégorie de durée, sur l'échelle suivante :
 
-Ces spécialités colorent la manière dont une compétence s'exprime dans la fiction ; elles n'accordent pas de bonus mécanique au seuil.
+**round (6 s) → minute (≈10 rounds) → 10 minutes → heure → 4 heures → 12 heures → 24 heures → semaine → mois**
+
+Le joueur peut décider de changer de catégorie :
+
+- **Accélérer** (descendre d'un cran, agir plus vite que la normale) : **+1 au seuil de réussite**.
+- **Prendre son temps** (monter d'un cran) : **-1 au seuil de réussite**, sans plancher.
+
+_Note : en prenant suffisamment de temps sur une action qui le permet narrativement, la réussite finit par être garantie. C'est un choix, pas un raccourci gratuit — le MJ reste juge de ce qu'une situation autorise ou non comme délai._
+
+#### Agir sur deux fronts à la fois
+
+Tenter deux actions en même temps (viser une couverture tout en tirant, par exemple) se résout avec le pool de dés et le niveau **les plus faibles** des deux actions concernées. Au lieu d'un seul dé suffisant pour réussir, il en faut **deux** au-dessus du seuil — une exigence équivalente à une réussite critique, mais interprétée ici comme "les deux actions aboutissent" plutôt que comme un succès éclatant.
+
+> **Exemple** : Kaan veut se mettre à couvert tout en arrosant un ennemi de tirs — deux actions en une seule fois (Discrétion pour le couvert, Combat pour le tir). On retient la plus faible des deux compétences, et au lieu d'un seul dé suffisant, il lui en faut deux au-dessus du seuil pour que les deux réussissent ensemble. S'il n'obtient qu'un seul succès, il choisit laquelle des deux actions aboutit — l'autre échoue.
+
+_Certaines armes (avantage à définir, voir [En réflexion](enreflexion.md)) permettent nativement d'atteindre plusieurs cibles avec un seul jet — une rafale ne se traite alors pas comme une action double._
+
+### 7. Spécialisation
+
+Une compétence acquise ne s'arrête pas à son propre niveau : elle peut recevoir une **spécialité**, dont le niveau s'additionne directement à celui de la compétence pour déterminer le seuil du test.
+
+Deux types de spécialité existent, chacun plafonné à **2 niveaux**, gagnés en jeu (1 point d'expérience = 1 niveau, même réserve d'XP que la progression de compétence) :
+
+- **Spécialité générique** : un verbe d'action précis, une méthode ou un matériau (par exemple, pour *Combat* : Arc, Épée, Lance ; pour *Discrétion* : Furtivité ou Déguisement — deux façons différentes d'obtenir le même effet mécanique, avec une scène de jeu différente à chaque fois).
+- **Spécialité d'affinité** : un pouvoir nommé, propre à la philosophie réellement embrassée par le personnage (voir *[Une affinité n'est pas encore une conviction](faction.md)*) — par exemple, *Phéromones* pour un Harmoniste sur *Présence*, ou *Décharge de zone* pour un Suprématiste sur *Combat*.
+
+**Une seule spécialité s'applique par test** — jamais les deux cumulées sur le même jet. Un personnage qui maîtrise l'épée aussi bien que ses griffes choisit, à chaque affrontement, l'angle qu'il adopte.
+
+> **Exemple** : Kaan a Combat niveau 4 (1 acquis à la création, 3 gagnés au fil de ses aventures). Il maîtrise deux styles : l'épée longue (spécialité générique niveau 2) et ses griffes mutantes, un pouvoir d'Harmoniste (spécialité d'affinité niveau 1). Face à un adversaire, il choisit son angle d'attaque : à l'épée, son niveau effectif grimpe à 6 (seuil 3+) ; aux griffes, à 5 (seuil 4+). Il ne convoque jamais les deux à la fois pour atteindre 7 sur un seul jet — sauf à tenter deux actions dans le même tour (frapper à l'épée et lacérer aux griffes), auquel cas chaque jet reste distinct, avec le malus habituel de l'action multiple (section II.6).
+
+Une compétence complètement maîtrisée (niveau 3) associée à une spécialité poussée à fond (niveau 2) atteint donc un niveau effectif de 7 — le maximum du jeu, seuil 2+.
 
 ---
 
@@ -181,7 +212,7 @@ Un rang fort ou faible dans un Attribut ou une Vocation dessine aussi un trait d
 
 ## IV. Les Affinités
 
-L'Affinité représente la philosophie de vie de votre personnage au début de l'histoire. Elle définit sa relation au monde, sa manière de résoudre les problèmes et son potentiel unique. Elle n'est pas figée pour toute la campagne — voir *[Une affinité n'est pas une cage](faction.md)*.
+L'Affinité représente la philosophie de vie de votre personnage au début de l'histoire. Elle définit sa relation au monde, sa manière de résoudre les problèmes et son potentiel unique — un potentiel qui ne se débloque pleinement qu'en étant réellement vécu (voir *[Une affinité n'est pas encore une conviction](faction.md)*).
 
 ### 1. PURETÉ : L'Héritage
 
@@ -190,7 +221,10 @@ _La conviction que l'humanité doit préserver son essence originelle et ses val
 #### Capacités de base
 
 - **Souveraineté (Passif) :** Vous n'êtes jamais affecté par les interférences électroniques, les poisons naturels ou les phéromones.
-- **Excellence (Attribut) :** Choisissez un Attribut. Sa limite de dé est augmentée à **d12**.
+- **Une capacité au choix, exclusive** (voir [En réflexion](enreflexion.md) pour les points encore ouverts sur cette capacité) :
+  - **Excellence :** Choisissez un Attribut. Sa limite de dé est augmentée à **d12**.
+  - **Déplacement de compétence :** Une compétence conserve son niveau, mais se lance avec le dé d'un Attribut différent de celui qui lui est normalement associé.
+  - **Télékinésie / télépathie :** un pouvoir psychique — mécanique encore à définir.
 
 #### Aspects uniques
 
@@ -257,6 +291,8 @@ _La conviction que l'humanité doit fusionner avec l'écosystème pour survivre.
 | Discrétion | **Camouflage chromatique :** Changement de peau pour fusionner avec le décor. |
 | Artisanat | **Bio-synthèse :** Culture de tissus, poisons ou outils naturels. |
 
+_Note : le concept même des pouvoirs d'affinité tel que décrit ci-dessus est en cours de révision — voir [En réflexion](enreflexion.md)._
+
 ---
 
 ## V. Résistances Passives
@@ -264,6 +300,8 @@ _La conviction que l'humanité doit fusionner avec l'écosystème pour survivre.
 Face au monde comme face aux autres, vous ne faites pas que jouer l'attaque : vous encaissez aussi. À chacune de vos 9 compétences actives correspond une **compétence passive**, qui reflète exactement le même niveau — pas de répartition séparée, pas de nouveau choix à la création.
 
 > **En un mot** : votre défense n'est pas un second personnage à construire, c'est le miroir du premier.
+
+_Note : la liste ci-dessous est en cours de révision — certaines de ces "résistances" ressemblent en réalité à des compétences actives déguisées. Voir [En réflexion](enreflexion.md)._
 
 ### 1. Le principe du miroir inversé
 
@@ -323,7 +361,7 @@ Chaque catégorie d'objet est associée à une compétence (une arme relève de 
 - **Rareté** (1 à 5) : Commun, Peu commun, Rare, Très rare, Introuvable.
 - **Encombrement** (0 à 5) : ce que l'objet coûte en capacité de transport.
 - **Qualité de l'instance** (0 à 5) : Inexistant, Rudimentaire, Standard, Supérieur, Expert, Légendaire. Elle ne change jamais le jet de dés — elle détermine uniquement le nombre d'**avantages** dont bénéficie l'objet (aucun sous le niveau Supérieur, puis 1, 2, 3).
-- **Avantages** : des qualités tactiques ou narratives — Perforant, Rapide, Silencieux, Précis, Lourd, Fiable, Polyvalent, Modulable, Dévastateur.
+- **Avantages** : des qualités tactiques ou narratives — Perforant, Rapide, Silencieux, Précis, Lourd, Fiable, Polyvalent, Modulable, Dévastateur. _(Un avantage couvrant les armes à tirs/attaques multiples est à l'étude, voir [En réflexion](enreflexion.md).)_
 - **Affinité de l'objet** (0 à 3, optionnel) : certains objets exceptionnels portent jusqu'à 3 pouvoirs liés à une affinité (Harmonie, Pureté ou Suprématie). Un personnage n'appartenant pas à cette affinité subit un malus en l'utilisant — la nature exacte de ce malus reste à trancher table par table.
 - **Dégâts** (armes, 0 à 5) et **Protection** (armures, réduit les dégâts encaissés d'autant).
 - **Pénalité** (armes exotiques) : certaines armes très puissantes imposent une contrepartie — un malus au seuil de réussite, ou (plus rarement) un dé affaibli — en échange d'un avantage majeur.
@@ -333,10 +371,16 @@ Chaque catégorie d'objet est associée à une compétence (une arme relève de 
 La capacité de transport maximale d'un personnage se calcule ainsi :
 
 ```
-Encombrement max = bonus(rang Vocation Exploration) + bonus(rang Attribut Habileté) + bonus des contenants portés
+Encombrement max = 5 + bonus(rang Vocation Exploration) + bonus(rang Attribut Habileté) + bonus des contenants portés
 ```
 
-où le bonus par rang vaut faible = +0, moyen = +1, fort = +2 — et où la capacité ne descend jamais sous **5 points**, quels que soient les rangs (un personnage doit toujours pouvoir porter au minimum son équipement de départ). Les contenants (sac à dos, ceinturon...) ajoutent leur propre bonus par-dessus ce plancher.
+où le bonus par rang vaut faible = +0, moyen = +1, fort = +2.
+
+> **Exemple 1** : Habileté forte, Exploration forte → 5 + 2 + 2 = **9** points. Une fois les 3 objets de départ posés, il reste **6 emplacements libres**.
+>
+> **Exemple 2** : Habileté moyenne, Exploration faible → 5 + 1 + 0 = **6** points. Une fois les 3 objets de départ posés, il reste **3 emplacements libres**.
+
+L'écart est net et voulu : le personnage taillé pour l'aventure porte deux fois plus de marge que celui qui ne l'est pas. Les contenants (sac à dos, ceinturon...) ajoutent leur propre bonus par-dessus ce total.
 
 Dépasser cette capacité impose un malus au seuil de réussite :
 
@@ -366,7 +410,9 @@ Les qualités 4 (Expert) et 5 (Légendaire) ne s'obtiennent jamais à la créati
 
 Un personnage progresse en jeu grâce aux **points d'expérience (XP)**, accordés par le meneur de jeu à l'issue d'une scène marquante ou d'une session.
 
-- **1 point d'expérience investi = 1 niveau supplémentaire** dans une compétence de votre choix (active).
-- Chaque compétence peut recevoir jusqu'à **3 points** au-delà de son niveau acquis à la création — le plafond absolu reste **niveau 5**, quel que soit le point de départ (une compétence faible à la création, niveau 0, peut donc atteindre au maximum le niveau 3 par l'expérience ; une compétence forte, niveau 2, peut atteindre le niveau 5).
-- Les points doivent être investis dans l'ordre : impossible d'acheter le 3ᵉ palier de progression d'une compétence sans avoir investi dans les deux précédents.
+- **1 point d'expérience investi = 1 niveau supplémentaire**, que ce soit dans une compétence active ou dans une spécialité (voir section II.7) — même réserve d'XP pour les deux usages.
+- Chaque compétence peut recevoir jusqu'à **3 points** au-delà de son niveau acquis à la création — le plafond de compétence reste **niveau 3** dans tous les cas. Une compétence faible à la création (niveau 0) peut donc atteindre au maximum le niveau 3 par l'expérience ; une compétence forte (niveau 2) plafonne également à 3 points investis, mais son niveau final atteint alors 5.
+- Une spécialité (générique ou d'affinité) se développe séparément, jusqu'à 2 niveaux, avec la même réserve d'XP.
+- Les points doivent être investis dans l'ordre : impossible d'acheter le 3ᵉ palier de progression d'une compétence, ou le 2ᵉ niveau d'une spécialité, sans avoir investi dans le palier précédent.
 - Les compétences passives ne se développent pas séparément : elles suivent automatiquement leur compétence active miroir.
+- La rareté des points d'expérience, la fragilité du personnage, et le fait que survivre à certaines situations coûte lui-même de l'XP, limitent naturellement les dérives — un joueur qui consacre tous ses premiers scénarios à devenir un as de la gâchette en a parfaitement le droit.
